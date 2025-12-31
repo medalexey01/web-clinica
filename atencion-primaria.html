@@ -2,50 +2,15 @@
 <html lang="es">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
   <title>Atención Primaria en Houston, TX | Clínica Hispana América</title>
   <meta name="description" content="Atención médica primaria en español cerca de South Gessner. Consultas generales, enfermedades crónicas, vacunación y laboratorio en Houston, TX." />
   <meta name="keywords" content="atención primaria Houston, médico de familia Houston, consulta general Houston TX, South Gessner clínica, médico español Houston" />
   <link rel="stylesheet" href="styles.css" />
-
-  <!-- ✅ FIX: CSS SOLO PARA MODAL (para que los inputs SIEMPRE sean clickeables) -->
-  <style>
-    #modalCita{
-      position:fixed !important;
-      inset:0 !important;
-      display:none;
-      align-items:center !important;
-      justify-content:center !important;
-      padding:20px !important;
-      background:rgba(0,0,0,0.75) !important;
-      z-index:999999 !important;
-      overflow:auto !important;
-      pointer-events:auto !important;
-      isolation:isolate !important;
-      -webkit-overflow-scrolling:touch;
-    }
-    #modalCita *{ pointer-events:auto !important; }
-    #modalCita .modalBox{
-      position:relative !important;
-      z-index:999999 !important;
-      background:#fff !important;
-      border-radius:16px !important;
-      max-width:500px !important;
-      width:100% !important;
-      max-height:90vh !important;
-      overflow:auto !important;
-      box-shadow:0 20px 60px rgba(0,0,0,.3) !important;
-    }
-  </style>
 </head>
-
 <body>
   <div class="top">⚠️ EN CASO DE EMERGENCIA MÉDICA LLAME AL 911</div>
-
-  <div style="margin-top:34px;text-align:center;font-weight:900;letter-spacing:.12em;font-size:12px;color:#ef4444">
-    VERSION AP-OK-02
-  </div>
-
+  
   <header>
     <div class="nav">
       <a class="brand" href="index.html">
@@ -57,7 +22,6 @@
           <small>Houston Medical Center</small>
         </div>
       </a>
-
       <div class="nav-right">
         <nav class="navlinks">
           <a class="navlink" href="index.html">Inicio</a>
@@ -67,7 +31,6 @@
           <a class="navlink" href="blog.html">Blog</a>
           <a class="navlink" href="investigaciones.html">Investigaciones</a>
         </nav>
-
         <div class="nav-actions">
           <a class="btn btn-dark" href="tel:+17132710622">📞 Llamar</a>
           <button class="btn btn-primary" onclick="abrirModal()">📅 Agendar</button>
@@ -82,7 +45,8 @@
         <span class="tag">🩺 Atención Médica Integral</span>
         <h1 style="margin-top:18px">ATENCIÓN PRIMARIA EN <span>HOUSTON</span></h1>
         <p style="margin-top:20px;font-size:18px">
-          Cuidado médico de calidad para toda su familia en South Gessner Road, Houston, TX.
+          Cuidado médico de calidad para toda su familia en South Gessner Road, Houston, TX. 
+          Médicos en español que entienden sus necesidades.
         </p>
         <div style="display:flex;flex-wrap:wrap;gap:14px;margin-top:26px">
           <button class="btn btn-primary" onclick="abrirModal()">📅 Agendar Cita</button>
@@ -90,44 +54,376 @@
         </div>
       </div>
     </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Nuestros Servicios de Atención Primaria</h2>
+        <div class="bar"></div>
+        <p style="font-size:18px;margin-bottom:32px">
+          En Clínica Hispana América en South Gessner, Houston, ofrecemos atención médica completa para usted y su familia.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>🩺 Consulta General</h3>
+            <p>
+              <strong>Atención médica para toda la familia en Houston.</strong><br><br>
+              Diagnóstico y tratamiento de enfermedades comunes como gripe, infecciones, 
+              dolores, fiebre y más. Chequeos médicos anuales y exámenes preventivos.
+            </p>
+            <ul style="margin-top:12px;line-height:1.8">
+              <li>Examen físico completo</li>
+              <li>Evaluación de síntomas</li>
+              <li>Recetas médicas</li>
+              <li>Referencias a especialistas</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>💊 Enfermedades Crónicas</h3>
+            <p>
+              <strong>Control y seguimiento de condiciones crónicas.</strong><br><br>
+              Manejo integral de diabetes, hipertensión, colesterol alto, 
+              problemas de tiroides y otras enfermedades crónicas.
+            </p>
+            <ul style="margin-top:12px;line-height:1.8">
+              <li>Control de diabetes</li>
+              <li>Hipertensión arterial</li>
+              <li>Colesterol y triglicéridos</li>
+              <li>Enfermedades de la tiroides</li>
+              <li>Seguimiento continuo</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>🔬 Laboratorio Clínico</h3>
+            <p>
+              <strong>Pruebas de laboratorio en el mismo lugar.</strong><br><br>
+              Resultados rápidos y confiables sin necesidad de ir a otro laboratorio. 
+              Análisis de sangre, orina y más.
+            </p>
+            <ul style="margin-top:12px;line-height:1.8">
+              <li>Química sanguínea completa</li>
+              <li>Biometría hemática</li>
+              <li>Perfil lipídico</li>
+              <li>Prueba de embarazo</li>
+              <li>Análisis de orina</li>
+              <li>Hemoglobina A1C</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>💉 Vacunación</h3>
+            <p>
+              <strong>Vacunas para adultos y niños en Houston.</strong><br><br>
+              Esquemas completos de vacunación según las recomendaciones del CDC. 
+              Proteja a su familia con inmunizaciones actualizadas.
+            </p>
+            <ul style="margin-top:12px;line-height:1.8">
+              <li>Vacuna contra la gripe (Flu)</li>
+              <li>COVID-19</li>
+              <li>Tétanos y difteria</li>
+              <li>Hepatitis A y B</li>
+              <li>Neumococo</li>
+              <li>Vacunas para viajes</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--gray-50)">
+      <div class="wrap">
+        <h2>¿Por Qué Elegirnos?</h2>
+        <div class="bar"></div>
+        <p style="font-size:18px;margin-bottom:32px">
+          Somos su clínica de confianza en South Gessner, Houston, TX.
+        </p>
+
+        <div class="grid">
+          <div class="card">
+            <h3>🗣️ Atención en Español</h3>
+            <p>
+              Todo nuestro personal habla español. Nos comunicamos claramente 
+              y entendemos su cultura y necesidades específicas.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>📍 Ubicación Conveniente</h3>
+            <p>
+              Estamos en <strong>South Gessner Road, Suite C, Houston, TX 77036</strong>. 
+              Fácil acceso y estacionamiento disponible.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>💰 Precios Accesibles</h3>
+            <p>
+              Aceptamos la mayoría de seguros médicos y ofrecemos opciones 
+              de pago para pacientes sin seguro.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>⏰ Horarios Flexibles</h3>
+            <p>
+              Abiertos de lunes a viernes de 9:00 AM a 5:00 PM y 
+              sábados de 9:00 AM a 2:00 PM para su conveniencia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2>Preguntas Frecuentes</h2>
+        <div class="bar"></div>
+        <p style="font-size:18px;margin-bottom:32px">
+          Respuestas a las preguntas más comunes sobre atención primaria en Houston.
+        </p>
+
+        <div style="max-width:800px;margin:0 auto">
+          <div class="faq-item">
+            <h3>¿Qué es la atención primaria?</h3>
+            <p>
+              La atención primaria es el primer nivel de contacto con el sistema de salud. 
+              Su médico de atención primaria en Houston es quien conoce su historial médico, 
+              diagnostica enfermedades comunes, maneja condiciones crónicas y lo refiere a 
+              especialistas cuando es necesario.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>¿Necesito seguro médico para recibir atención?</h3>
+            <p>
+              No es obligatorio tener seguro médico. En Clínica Hispana América en South Gessner, 
+              Houston, aceptamos pacientes con y sin seguro. Ofrecemos precios accesibles y 
+              planes de pago para quienes no tienen cobertura médica.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>¿Qué seguros médicos aceptan?</h3>
+            <p>
+              Aceptamos la mayoría de los seguros médicos principales incluyendo Medicare, 
+              Medicaid y seguros privados. Llámenos al <strong>(713) 271-0622</strong> para 
+              confirmar si aceptamos su seguro específico.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>¿Cuánto cuesta una consulta sin seguro?</h3>
+            <p>
+              Los precios varían según el tipo de consulta y servicios necesarios. 
+              Contacte nuestra clínica en South Gessner para información específica sobre 
+              costos. Ofrecemos opciones accesibles para la comunidad de Houston.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>¿Atienden a niños y adultos mayores?</h3>
+            <p>
+              Sí, brindamos atención médica primaria para todas las edades: niños, adultos 
+              y adultos mayores. Somos una clínica familiar en Houston que cuida de toda 
+              su familia en un solo lugar.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>¿Ofrecen servicios de laboratorio en el mismo lugar?</h3>
+            <p>
+              Sí, contamos con laboratorio clínico en nuestra ubicación de South Gessner, 
+              Houston. No necesita ir a otro lugar para sus análisis de sangre u otras 
+              pruebas de laboratorio.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>¿Cómo puedo agendar una cita?</h3>
+            <p>
+              Puede agendar su cita llamando al <strong>(713) 271-0622</strong>, 
+              enviando un mensaje por WhatsApp, o usando nuestro formulario en línea. 
+              Ofrecemos citas el mismo día cuando hay disponibilidad.
+            </p>
+          </div>
+
+          <div class="faq-item">
+            <h3>¿Están cerca de mí en Houston?</h3>
+            <p>
+              Estamos ubicados en <strong>5950 South Gessner Rd, Suite C, Houston, TX 77036</strong>. 
+              Servimos a las comunidades de Southwest Houston, Gulfton, Sharpstown, Alief y áreas cercanas. 
+              Estacionamiento gratuito disponible.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:linear-gradient(135deg,var(--primary-light) 0%,var(--primary) 100%);color:var(--white);text-align:center">
+      <div class="wrap">
+        <h2 style="color:var(--white);margin-bottom:16px">¿Listo para Cuidar su Salud?</h2>
+        <p style="font-size:20px;margin-bottom:32px;max-width:700px;margin-left:auto;margin-right:auto;color:rgba(255,255,255,.95)">
+          Agende su cita de atención primaria hoy en nuestra clínica de South Gessner, Houston. 
+          Estamos aquí para cuidar de usted y su familia.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center">
+          <a class="btn" style="background:var(--white);color:var(--primary)" href="tel:+17132710622">
+            📞 Llámenos: (713) 271-0622
+          </a>
+          <button class="btn btn-outline" style="border-color:var(--white);color:var(--white)" onclick="abrirModal()">
+            📅 Agendar Cita en Línea
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto" class="section">
+      <div class="wrap">
+        <h2>Visítenos en Houston</h2>
+        <div class="bar"></div>
+        <div class="grid">
+          <div class="card">
+            <h3>📍 Dirección</h3>
+            <p style="font-size:16px;margin-bottom:16px">
+              <strong>5950 South Gessner Rd, Suite C</strong><br>
+              Houston, TX 77036
+            </p>
+            <a class="btn btn-outline" target="_blank" href="https://www.google.com/maps/place/Cl%C3%ADnica+Hispana+Am%C3%A9rica/@29.714784,-95.5397048,17z/data=!3m1!4b1!4m6!3m5!1s0x8640c2e0e95d973f:0xadd9ef9116499915!8m2!3d29.714784!4d-95.5397048!16s%2Fg%2F1hc3jvy_c?hl=es-419">
+              🗺️ Abrir en Google Maps
+            </a>
+          </div>
+
+          <div class="card">
+            <h3>📞 Contacto</h3>
+            <p style="font-size:16px">
+              <strong>Teléfono:</strong> (713) 271-0622<br>
+              <strong>WhatsApp:</strong> (713) 271-0622<br>
+              <strong>Email:</strong> <a href="mailto:citas@clinicaha.com">citas@clinicaha.com</a>
+            </p>
+            <p style="margin-top:16px;padding:16px;background:var(--gray-50);border-radius:12px;border-left:4px solid var(--primary)">
+              <strong>🕐 Horarios:</strong><br>
+              Lunes - Viernes: 9:00 AM - 5:00 PM<br>
+              Sábados: 9:00 AM - 2:00 PM<br>
+              Domingos: Cerrado
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <!-- ✅ MODAL -->
-  <div id="modalCita" aria-hidden="true">
-    <div class="modalBox">
-      <div style="padding:24px 32px;border-bottom:1px solid #e5e7eb;display:flex;justify-content:space-between;align-items:center">
-        <h2 style="margin:0;font-size:24px;font-weight:800">📅 Agendar Cita</h2>
-        <button onclick="cerrarModal()" style="background:none;border:none;font-size:28px;cursor:pointer;color:#6b7280;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:8px" aria-label="Cerrar">✕</button>
+  <footer>
+    <div class="wrap" style="text-align:center">
+      <div style="margin-bottom:24px">
+        <div style="font-weight:900;font-style:italic;text-transform:uppercase;letter-spacing:-.025em;font-size:24px;margin-bottom:8px">
+          Clínica Hispana América
+        </div>
+        <div class="muted" style="margin-bottom:16px">Houston Medical Center | 5950 South Gessner Rd, Suite C, Houston, TX 77036</div>
+      </div>
+      
+      <div style="display:flex;gap:16px;justify-content:center;align-items:center;margin-bottom:20px;flex-wrap:wrap">
+        <a href="https://www.facebook.com/ClinicaHispanaAmerica" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+          </svg>
+        </a>
+        <a href="https://www.instagram.com/clinicahamerica/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+          </svg>
+        </a>
+        <a href="https://x.com/clinicahspna_a" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="X (Twitter)">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+          </svg>
+        </a>
+        <a href="https://www.linkedin.com/company/clinica-hispana-america/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+          </svg>
+        </a>
+      </div>
+      
+      <div class="muted">© 2025 Clínica Hispana América - Todos los derechos reservados.</div>
+    </div>
+  </footer>
+
+  <div class="float">
+    <a class="fab wa" href="https://wa.me/17132710622" target="_blank">💬</a>
+    <a class="fab ph" href="tel:+17132710622">📞</a>
+  </div>
+
+  <div id="modalCita" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:99999;overflow-y:scroll;-webkit-overflow-scrolling:touch;">
+    
+    <div style="background:white;border-radius:12px;max-width:500px;width:94%;margin:20px auto 80px auto;position:relative;box-shadow:0 10px 25px rgba(0,0,0,0.5);">
+      
+      <div style="padding:20px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:white;border-radius:12px 12px 0 0;z-index:10;">
+        <h2 style="margin:0;font-size:20px;font-weight:800">📅 Agendar Cita</h2>
+        <button onclick="cerrarModal()" style="background:#f3f4f6;border:none;font-size:24px;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
       </div>
 
-      <div style="padding:32px">
-        <p style="margin-bottom:24px">Complete el formulario y nos pondremos en contacto con usted para confirmar su cita.</p>
-
+      <div style="padding:20px;">
+        <p style="margin-bottom:20px;font-size:15px;color:#666">Complete sus datos. Le responderemos por correo o teléfono para confirmar.</p>
+        
         <form id="formCita" action="https://formsubmit.co/citas@clinicaha.com" method="POST">
           <input type="hidden" name="_subject" value="🏥 Nueva Solicitud de Cita - Clínica Hispana América" />
-          <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_template" value="table" />
+          <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_next" value="https://pruebas.clinicaha.com/gracias.html" />
-
-          <div style="margin-bottom:20px">
-            <label style="display:block;margin-bottom:8px;font-weight:700;color:#1f2937;font-size:14px">Nombre Completo *</label>
-            <input type="text" name="nombre" required placeholder="Ingrese su nombre completo"
-                   style="width:100%;padding:12px 16px;border:2px solid #d1d5db;border-radius:8px;font-size:15px" />
+          
+          <div style="margin-bottom:16px">
+            <label style="display:block;margin-bottom:6px;font-weight:700;font-size:14px;color:#374151">Nombre Completo *</label>
+            <input type="text" name="nombre" required style="width:100%;padding:12px;border:1px solid #d1d5db;border-radius:8px;font-size:16px;background:#fff" placeholder="Ingrese su nombre" />
           </div>
 
-          <div style="margin-bottom:20px">
-            <label style="display:block;margin-bottom:8px;font-weight:700;color:#1f2937;font-size:14px">Teléfono *</label>
-            <input type="tel" name="telefono" required placeholder="(713) 123-4567"
-                   style="width:100%;padding:12px 16px;border:2px solid #d1d5db;border-radius:8px;font-size:15px" />
+          <div style="margin-bottom:16px">
+            <label style="display:block;margin-bottom:6px;font-weight:700;font-size:14px;color:#374151">Teléfono *</label>
+            <input type="tel" name="telefono" required style="width:100%;padding:12px;border:1px solid #d1d5db;border-radius:8px;font-size:16px;background:#fff" placeholder="(713) 123-4567" />
           </div>
 
-          <div style="margin-bottom:20px">
-            <label style="display:block;margin-bottom:8px;font-weight:700;color:#1f2937;font-size:14px">Email *</label>
-            <input type="email" name="email" required placeholder="su.email@ejemplo.com"
-                   style="width:100%;padding:12px 16px;border:2px solid #d1d5db;border-radius:8px;font-size:15px" />
+          <div style="margin-bottom:16px">
+            <label style="display:block;margin-bottom:6px;font-weight:700;font-size:14px;color:#374151">Email (Para confirmar) *</label>
+            <input type="email" name="email" required style="width:100%;padding:12px;border:1px solid #d1d5db;border-radius:8px;font-size:16px;background:#fff" placeholder="ejemplo@correo.com" />
           </div>
 
-          <button type="submit" style="width:100%;padding:16px;background:linear-gradient(135deg,#3b82f6 0%,#2563eb 100%);color:white;border:none;border-radius:12px;font-weight:800;font-size:18px;cursor:pointer">
+          <div style="margin-bottom:16px">
+            <label style="display:block;margin-bottom:6px;font-weight:700;font-size:14px;color:#374151">Fecha Preferida *</label>
+            <input type="date" name="fecha" required style="width:100%;padding:12px;border:1px solid #d1d5db;border-radius:8px;font-size:16px;background:#fff" />
+          </div>
+
+          <div style="margin-bottom:16px">
+            <label style="display:block;margin-bottom:6px;font-weight:700;font-size:14px;color:#374151">Motivo de la Cita *</label>
+            <select name="motivo" required style="width:100%;padding:12px;border:1px solid #d1d5db;border-radius:8px;font-size:16px;background:#fff">
+              <option value="">-- Seleccione una opción --</option>
+              <option value="Consulta General">Consulta General</option>
+              <option value="Examen I-693 (Inmigración)">Examen I-693 (Inmigración)</option>
+              <option value="Salud de la Mujer">Salud de la Mujer</option>
+              <option value="Enfermedades Crónicas">Enfermedades Crónicas</option>
+              <option value="Vacunación">Vacunación</option>
+              <option value="Laboratorio">Laboratorio</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom:16px">
+            <label style="display:block;margin-bottom:6px;font-weight:700;font-size:14px;color:#374151">¿Tiene Seguro Médico? *</label>
+            <select name="seguro" required style="width:100%;padding:12px;border:1px solid #d1d5db;border-radius:8px;font-size:16px;background:#fff">
+              <option value="">-- Seleccione una opción --</option>
+              <option value="No tengo seguro">No tengo seguro</option>
+              <option value="Sí - Medicare">Sí - Medicare</option>
+              <option value="Sí - Medicaid">Sí - Medicaid</option>
+              <option value="Sí - Seguro Privado">Sí - Seguro Privado</option>
+            </select>
+          </div>
+          
+          <div style="margin-bottom:24px">
+             <label style="display:block;margin-bottom:6px;font-weight:700;font-size:14px;color:#374151">Comentarios o Dudas</label>
+             <textarea name="comentarios" rows="3" style="width:100%;padding:12px;border:1px solid #d1d5db;border-radius:8px;font-size:16px;background:#fff;resize:vertical" placeholder="¿Alguna pregunta adicional?"></textarea>
+          </div>
+
+          <button type="submit" style="width:100%;padding:16px;background:linear-gradient(135deg,#3b82f6 0%,#2563eb 100%);color:white;border:none;border-radius:10px;font-weight:800;font-size:18px;cursor:pointer;box-shadow:0 4px 6px rgba(37,99,235,0.2)">
             📅 Enviar Solicitud
           </button>
         </form>
@@ -135,11 +431,36 @@
     </div>
   </div>
 
-  <div class="float">
-    <a class="fab wa" href="https://wa.me/17132710622" target="_blank" rel="noopener">💬</a>
-    <a class="fab ph" href="tel:+17132710622">📞</a>
-  </div>
+  <script>
+    function abrirModal() {
+      const modal = document.getElementById("modalCita");
+      if (modal) {
+        modal.style.display = "block"; 
+        document.body.style.overflow = "hidden"; 
+      }
+    }
 
-  <script src="script.js" defer></script>
+    function cerrarModal() {
+      const modal = document.getElementById("modalCita");
+      if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = ""; 
+        
+        const form = document.getElementById("formCita");
+        if (form) form.reset();
+      }
+    }
+
+    // Cerrar al hacer clic fuera
+    document.addEventListener("click", function(e) {
+      const modal = document.getElementById("modalCita");
+      if (modal && e.target === modal) cerrarModal();
+    });
+
+    // Cerrar con ESC
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape") cerrarModal();
+    });
+  </script>
 </body>
 </html>
