@@ -9,22 +9,67 @@
   <link rel="stylesheet" href="styles.css" />
   
   <style>
+    /* 1. FONDO DE LA DOCTORA (Suave y natural) */
     .hero-background {
-      /* CAMBIO 1: El filtro azul ahora es muy suave (0.2 y 0.1) para que se vea bien la doctora */
-      background: linear-gradient(rgba(30, 58, 138, 0.2), rgba(30, 58, 138, 0.1)), url('images/doctora-hero.png');
+      background: linear-gradient(rgba(30, 58, 138, 0.15), rgba(30, 58, 138, 0.05)), url('images/doctora-hero.png');
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
+      
+      /* TRUCO: Subimos la imagen para que quede DETRÁS del menú */
+      margin-top: -90px; 
+      padding-top: 160px; /* Compensamos el espacio para que el texto no quede tapado */
+    }
+
+    /* 2. MENÚ TRANSPARENTE (Sin franja blanca) */
+    header {
+      background: transparent !important;
+      position: relative;
+      z-index: 10; /* Para que esté por encima de la imagen */
     }
     
-    /* Sombra suave al texto para que se lea bien aunque el fondo sea claro */
-    .hero-title, .hero-subtitle {
-      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    .nav {
+      background: transparent !important;
+      box-shadow: none !important;
+      border-bottom: none !important;
+    }
+
+    /* 3. TEXTOS EN BLANCO CON SOMBRA (Para leerse bien sobre la imagen) */
+    .hero-title {
+      color: #ffffff !important;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.7); /* Sombra negra fuerte */
+    }
+    
+    .hero-subtitle {
+      color: #ffffff !important;
+      font-weight: 500;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.8);
+    }
+
+    /* 4. ENLACES DEL MENÚ EN BLANCO */
+    .navlink {
+      color: #ffffff !important;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      font-weight: 600;
+    }
+    
+    .navlink:hover {
+      color: #e2e8f0 !important; /* Un blanco grisáceo al pasar el mouse */
+    }
+
+    /* Ajuste para el nombre de la clínica en el logo (si es texto) */
+    .brand div {
+       color: #ffffff !important;
+       text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+    }
+    .brand small {
+       color: #e2e8f0 !important;
+       text-shadow: 0 1px 4px rgba(0,0,0,0.8);
     }
   </style>
 </head>
 <body>
-  <div class="top">⚠️ EN CASO DE EMERGENCIA MÉDICA LLAME AL 911</div>
+  <div class="top" style="position:relative; z-index:20;">⚠️ EN CASO DE EMERGENCIA MÉDICA LLAME AL 911</div>
   
   <header>
     <div class="nav">
@@ -56,12 +101,14 @@
 
   <main>
     <section class="hero-background">
-      <div class="hero-overlay"></div> <div class="wrap hero-content-wrapper">
+      <div class="hero-overlay" style="background:none;"></div> 
+      
+      <div class="wrap hero-content-wrapper">
         <div class="hero-text-content">
           
           <h1 class="hero-title">
             TU SALUD, <br>
-            <span class="hero-highlight">NUESTRA PRIORIDAD</span>
+            <span class="hero-highlight" style="color:#ffffff;">NUESTRA PRIORIDAD</span>
           </h1>
           <p class="hero-subtitle">
             Desde exámenes de inmigración I-693 hasta salud preventiva para toda la familia. 
