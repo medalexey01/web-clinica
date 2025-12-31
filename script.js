@@ -1,37 +1,47 @@
 // ============================================
-// SCRIPT.JS - MODAL DE CITAS (ROBUSTO HOSTINGER)
+// SCRIPT.JS - MODAL AGENDAR CITA (UNIFICADO)
 // ============================================
 
 (function () {
-  // Debug (opcional): te ayuda a confirmar que el archivo está cargando.
-  // Luego lo puedes borrar si quieres.
-  console.log("✅ script.js cargó correctamente");
-
   function abrirModal() {
     const modal = document.getElementById("modalCita");
-    if (!modal) {
-      console.error("❌ No existe #modalCita en el HTML");
-      return;
-    }
+    if (!modal) return;
 
-    modal.classList.add("active");
+    // Guardar scroll actual
+    const scrollY = window.scrollY || document.documentElement.scrollTop || 0;
+    modal.dataset.scrollY = String(scrollY);
+
+    // Mostrar modal
+    modal.style.display = "flex";
     modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
+
+    // Bloquear scroll sin “salto”
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
   }
 
   function cerrarModal() {
     const modal = document.getElementById("modalCita");
     if (!modal) return;
 
-    modal.classList.remove("active");
+    // Ocultar modal
+    modal.style.display = "none";
     modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
 
+    // Restaurar scroll
+    const scrollY = parseInt(modal.dataset.scrollY || "0", 10);
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.width = "";
+    window.scrollTo(0, scrollY);
+
+    // Reset form
     const form = document.getElementById("formCita");
     if (form) form.reset();
   }
 
-  // ✅ IMPORTANTE: Exponer funciones al scope global para que onclick funcione SIEMPRE
+  // Exponer global para onclick
   window.abrirModal = abrirModal;
   window.cerrarModal = cerrarModal;
 
@@ -39,14 +49,15 @@
     const modal = document.getElementById("modalCita");
     if (!modal) return;
 
-    // Cerrar clic fuera
-    modal.addEventListener("click", (e) => {
-      if (e.target === modal) cerrarModal();
-    });
-
     // Cerrar con ESC
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") cerrarModal();
     });
+
+    // Cerrar clic fuera
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) cerrarModal();
+    });
   });
 })();
+
