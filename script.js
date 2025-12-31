@@ -1,25 +1,20 @@
 // ============================================
-// SCRIPT.JS - MODAL DE CITAS (SIN PARPADEO)
+// SCRIPT.JS - MODAL AGENDAR CITA (SIN PARPADEO)
 // ============================================
 
 (function () {
-  console.log("✅ script.js cargado correctamente");
+  let lastScrollY = 0;
 
   function abrirModal() {
     const modal = document.getElementById("modalCita");
-    if (!modal) {
-      console.error("❌ No se encontró el modal #modalCita");
-      return;
-    }
+    if (!modal) return;
 
-    // 1. Mostrar el modal (flex para centrar)
+    lastScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+
     modal.style.display = "flex";
     modal.setAttribute("aria-hidden", "false");
 
-    // 2. SOLUCIÓN AL PARPADEO:
-    // En lugar de 'position: fixed', usamos 'overflow: hidden'.
-    // Esto evita que la página de fondo se mueva, pero permite
-    // que el teclado del celular suba sin causar saltos visuales.
+    // Bloquear scroll de forma estable (sin fixed)
     document.body.style.overflow = "hidden";
   }
 
@@ -27,35 +22,42 @@
     const modal = document.getElementById("modalCita");
     if (!modal) return;
 
-    // 1. Ocultar modal
     modal.style.display = "none";
     modal.setAttribute("aria-hidden", "true");
 
-    // 2. Restaurar el scroll de la página
     document.body.style.overflow = "";
 
-    // 3. Limpiar formulario (opcional)
+    // Restaurar scroll
+    window.scrollTo(0, lastScrollY);
+
     const form = document.getElementById("formCita");
     if (form) form.reset();
   }
 
-  // ✅ Exponer funciones globalmente
+  // Exponer global para onclick
   window.abrirModal = abrirModal;
   window.cerrarModal = cerrarModal;
 
-  // Event Listeners
   document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("modalCita");
     if (!modal) return;
 
-    // Cerrar al hacer clic en el fondo oscuro
+    // IMPORTANTE:
+    // Solo cerrar si haces click EXACTAMENTE en el fondo (overlay),
+    // no dentro del contenido del modal.
     modal.addEventListener("click", (e) => {
       if (e.target === modal) cerrarModal();
     });
 
-    // Cerrar con la tecla ESC
+    // ESC para cerrar
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") cerrarModal();
     });
+
+    // Evita que clicks dentro del cuadro propaguen (extra seguridad)
+    const inner = modal.querySelector("div");
+    if (inner) {
+      inner.addEventListener("click", (e) => e.stopPropagation());
+    }
   });
 })();
