@@ -1,12 +1,9 @@
 // ============================================
-// SCRIPT.JS - MODAL DE CITAS (VERSIÓN CORREGIDA)
+// SCRIPT.JS - MODAL DE CITAS (SIN PARPADEO)
 // ============================================
 
 (function () {
   console.log("✅ script.js cargado correctamente");
-
-  // Variable para guardar la posición del scroll
-  let scrollY = 0;
 
   function abrirModal() {
     const modal = document.getElementById("modalCita");
@@ -15,49 +12,43 @@
       return;
     }
 
-    // 1. Guardar posición actual del scroll para evitar saltos
-    scrollY = window.scrollY;
-
-    // 2. Mostrar el modal forzando el estilo 'flex'
-    // (Esto sobreescribe el style="display:none" del HTML)
+    // 1. Mostrar el modal (flex para centrar)
     modal.style.display = "flex";
     modal.setAttribute("aria-hidden", "false");
 
-    // 3. Bloquear el scroll del cuerpo
-    document.body.style.position = "fixed";
-    document.body.style.top = `-${scrollY}px`;
-    document.body.style.width = "100%";
+    // 2. SOLUCIÓN AL PARPADEO:
+    // En lugar de 'position: fixed', usamos 'overflow: hidden'.
+    // Esto evita que la página de fondo se mueva, pero permite
+    // que el teclado del celular suba sin causar saltos visuales.
+    document.body.style.overflow = "hidden";
   }
 
   function cerrarModal() {
     const modal = document.getElementById("modalCita");
     if (!modal) return;
 
-    // 1. Ocultar el modal
+    // 1. Ocultar modal
     modal.style.display = "none";
     modal.setAttribute("aria-hidden", "true");
 
-    // 2. Restaurar el scroll del cuerpo
-    document.body.style.position = "";
-    document.body.style.top = "";
-    document.body.style.width = "";
-    window.scrollTo(0, scrollY);
+    // 2. Restaurar el scroll de la página
+    document.body.style.overflow = "";
 
-    // 3. Limpiar el formulario si existe
+    // 3. Limpiar formulario (opcional)
     const form = document.getElementById("formCita");
     if (form) form.reset();
   }
 
-  // ✅ Exponer funciones al scope global para que los botones onclick funcionen
+  // ✅ Exponer funciones globalmente
   window.abrirModal = abrirModal;
   window.cerrarModal = cerrarModal;
 
-  // Event Listeners (cuando el DOM esté listo)
+  // Event Listeners
   document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById("modalCita");
     if (!modal) return;
 
-    // Cerrar al hacer clic fuera del contenido del modal
+    // Cerrar al hacer clic en el fondo oscuro
     modal.addEventListener("click", (e) => {
       if (e.target === modal) cerrarModal();
     });
