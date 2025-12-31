@@ -6,127 +6,126 @@
   <title>Clínica Hispana América | Atención Médica en Español Houston, TX</title>
   <meta name="description" content="Atención médica profesional en español en Houston. Exámenes I-693 USCIS, atención primaria, salud de la mujer. Médicos certificados en South Gessner." />
   <link rel="stylesheet" href="styles.css" />
-  
+
+  <!-- ✅ Fondo azul hospital (y eliminar margen) -->
   <style>
-    /* ESTILOS FORZADOS PARA LA IMAGEN DE LA DOCTORA */
-    .hero-background {
-      /* Filtro muy suave casi invisible */
-      background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.0)), url('images/doctora-hero.png');
-      background-size: cover;
-      background-position: center top;
-      background-repeat: no-repeat;
-      
-      /* CLAVE: Subimos la imagen para que quede detrás del menú */
-      margin-top: -90px; 
-      padding-top: 160px;
-      padding-bottom: 100px;
+    html, body{
+      margin:0 !important;
+      padding:0 !important;
+      width:100%;
+      overflow-x:hidden;
+    }
+    body{
+      background: #bfe3f2 !important;
+    }
+    main{
+      background:#ffffff;
     }
 
-    /* CLAVE: MENÚ TOTALMENTE TRANSPARENTE */
-    header {
-      background: transparent !important;
-      position: relative;
-      z-index: 10;
-      width: 100%;
-    }
-    
-    .nav {
-      background: transparent !important;
-      box-shadow: none !important;
-      border: none !important;
+    /* ✅ AZUL OSCURO MARINO PARA TODO EL MENÚ */
+    :root{
+      --nav-blue-dark: #0b3a66;
+      --nav-blue-darker: #082a4a;
     }
 
-    /* Texto blanco SIN sombra */
-    .hero-title {
-      color: #ffffff !important;
-      text-shadow: none !important; /* ✅ QUITAR SOMBRA */
+    /* Todos los enlaces del menú en azul marino */
+    header .nav a,
+    header .nav a *,
+    header .navlink,
+    header .navlinks a,
+    header .brand,
+    header .brand *,
+    header .brand-title,
+    header .brand-subtitle,
+    header .brand-text,
+    header .brand-text * {
+      color: var(--nav-blue-dark) !important;
+      text-shadow: none !important;
+      font-weight: 700 !important;
     }
 
-    /* ✅ HACER "NUESTRA PRIORIDAD" BLANCO SIN SOMBRA */
-    .hero-title .hero-highlight{
-      color:#ffffff !important;
-      text-shadow:none !important; /* ✅ QUITAR SOMBRA */
-      -webkit-text-fill-color:#ffffff !important; /* por si algun estilo lo estaba "transparente" */
-    }
-    
-    .hero-subtitle {
-      color: #ffffff !important;
-      font-weight: 500;
-      text-shadow: 0 1px 5px rgba(0,0,0,0.8);
+    /* Hover en enlaces */
+    header .nav a:hover,
+    header .navlink:hover {
+      color: var(--nav-blue-darker) !important;
+      background: rgba(11,58,102,0.10) !important;
+      border-radius: 999px !important;
     }
 
-    /* Enlaces del menú en blanco */
-    .navlink {
-      color: #ffffff !important;
-      text-shadow: 0 1px 4px rgba(0,0,0,0.8);
-      font-weight: 600;
+    /* Brand específico */
+    header .brand-title {
+      font-weight: 800 !important;
+      text-transform: uppercase !important;
+      letter-spacing: 0.4px !important;
+      font-size: 16px !important;
+      line-height: 1.1 !important;
     }
-    
-    /* Logo en blanco */
-    .brand div {
-       color: #ffffff !important;
-       text-shadow: 0 1px 4px rgba(0,0,0,0.9);
-    }
-    .brand small {
-       color: #e2e8f0 !important;
-       text-shadow: 0 1px 4px rgba(0,0,0,0.9);
+
+    header .brand-subtitle {
+      font-weight: 700 !important;
+      text-transform: uppercase !important;
+      font-size: 12px !important;
+      opacity: 0.95 !important;
+      line-height: 1.1 !important;
     }
   </style>
 </head>
+
 <body>
   <div class="top" style="position:relative; z-index:20;">⚠️ EN CASO DE EMERGENCIA MÉDICA LLAME AL 911</div>
-  
-  <header>
-    <div class="nav">
-      <a class="brand" href="index.html">
+
+  <header style="background: transparent !important; position: relative; z-index: 10; width: 100%; margin:0 !important; padding:0 !important; border:0 !important; box-shadow:none !important;">
+    <div class="nav" style="background: transparent !important; box-shadow: none !important; border-bottom: none !important; margin:0 !important;">
+
+      <!-- ✅ BRAND: azul oscuro marino -->
+      <a class="brand" href="index.html" style="color: #0b3a66 !important; text-decoration: none;">
         <img src="images/logo.png" alt="Clínica Hispana América" style="height:52px" onerror="this.style.display='none'" />
-        <div>
-          <div style="font-weight:900;font-style:italic;letter-spacing:-.025em;text-transform:uppercase;font-size:16px;">
-            Clínica Hispana América
-          </div>
-          <small>Houston Medical Center</small>
+        <div class="brand-text">
+          <div class="brand-title" style="color: #0b3a66 !important; font-weight: 800 !important;">CLÍNICA HISPANA AMÉRICA</div>
+          <small class="brand-subtitle" style="color: #0b3a66 !important; font-weight: 700 !important;">HOUSTON MEDICAL CENTER</small>
         </div>
       </a>
+
       <div class="nav-right">
         <nav class="navlinks">
-          <a class="navlink" href="index.html">Inicio</a>
-          <a class="navlink" href="atencion-primaria.html">Atención Primaria</a>
-          <a class="navlink" href="salud-mujer.html">Salud de la Mujer</a>
-          <a class="navlink" href="examen-inmigracion.html">Examen I-693</a>
-          <a class="navlink" href="blog.html">Blog</a>
-          <a class="navlink" href="investigaciones.html">Investigaciones</a>
+          <a class="navlink" href="index.html" style="color: #0b3a66 !important; font-weight: 700 !important;">Inicio</a>
+          <a class="navlink" href="atencion-primaria.html" style="color: #0b3a66 !important; font-weight: 700 !important;">Medicina General</a>
+          <a class="navlink" href="salud-mujer.html" style="color: #0b3a66 !important; font-weight: 700 !important;">Salud de la Mujer</a>
+          <a class="navlink" href="examen-inmigracion.html" style="color: #0b3a66 !important; font-weight: 700 !important;">Examen de Inmigración</a>
+          <a class="navlink" href="blog.html" style="color: #0b3a66 !important; font-weight: 700 !important;">Blog</a>
+          <a class="navlink" href="investigaciones.html" style="color: #0b3a66 !important; font-weight: 700 !important;">Investigaciones</a>
         </nav>
-        <div class="nav-actions">
-          <a class="btn btn-dark" href="tel:+17132710622">📞 Llamar</a>
-          <button class="btn btn-primary" onclick="abrirModal()">📅 Agendar</button>
-        </div>
       </div>
+
     </div>
   </header>
 
   <main>
-    <section class="hero-background">
+    <section class="hero-background" style="
+      background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.0)), url('images/doctora-hero.png');
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      margin-top: 0px;
+      padding-top: 220px;
+      padding-bottom: 100px;
+    ">
       <div class="wrap hero-content-wrapper">
         <div class="hero-text-content">
-          
-          <h1 class="hero-title">
-            TU SALUD, <br>
-            <span class="hero-highlight" style="color: #ffffff !important; text-shadow:none !important;">NUESTRA PRIORIDAD</span>
-          </h1>
-          
-          <p class="hero-subtitle">
-            Desde exámenes de inmigración I-693 hasta salud preventiva para toda la familia. 
-            Médicos certificados por USCIS en South Gessner, Houston, TX.
-          </p>
-          
+
           <div class="hero-buttons">
             <button class="hero-btn hero-btn-primary" onclick="abrirModal()">
-              📅 Reservar Cita Ahora
+              📅 Hacer un Cita
             </button>
             <a class="hero-btn hero-btn-secondary" href="tel:+17132710622">
               📞 Llamar: (713) 271-0622
             </a>
           </div>
+
+          <p class="hero-subtitle" style="color: #ffffff !important; font-weight: 500; text-shadow: 0 1px 5px rgba(0,0,0,0.8); margin-top: 24px;">
+            Desde exámenes de inmigración I-693 hasta salud preventiva para toda la familia. Médicos certificados por USCIS en South Gessner, Houston, TX.
+          </p>
+
         </div>
       </div>
     </section>
@@ -142,10 +141,9 @@
         <div class="grid">
           <div class="card" style="text-align:center">
             <div style="font-size:48px;margin-bottom:16px">🩺</div>
-            <h3>Atención Primaria</h3>
+            <h3>Medicina General</h3>
             <p>
-              Consultas generales, enfermedades crónicas, laboratorio y vacunación 
-              para toda la familia.
+              Consultas generales, enfermedades crónicas, laboratorio y vacunación para toda la familia.
             </p>
             <a href="atencion-primaria.html" class="btn btn-primary" style="margin-top:16px;width:100%">
               Ver Detalles →
@@ -156,8 +154,7 @@
             <div style="font-size:48px;margin-bottom:16px">👩‍⚕️</div>
             <h3>Salud de la Mujer</h3>
             <p>
-              Papanicolaou, control prenatal, planificación familiar y atención 
-              ginecológica integral.
+              Papanicolaou, control prenatal, planificación familiar y atención ginecológica integral.
             </p>
             <a href="salud-mujer.html" class="btn btn-primary" style="margin-top:16px;width:100%;background:#ec4899">
               Ver Detalles →
@@ -166,10 +163,9 @@
 
           <div class="card" style="text-align:center">
             <div style="font-size:48px;margin-bottom:16px">🛂</div>
-            <h3>Examen I-693 USCIS</h3>
+            <h3>Examen de Inmigración</h3>
             <p>
-              Médicos civiles autorizados por USCIS. Proceso completo, sellado 
-              oficial y resultados rápidos.
+              Médicos civiles autorizados por USCIS. Proceso completo, sellado oficial y resultados rápidos.
             </p>
             <a href="examen-inmigracion.html" class="btn btn-primary" style="margin-top:16px;width:100%">
               Ver Detalles →
@@ -260,8 +256,7 @@
           <div class="card testimonial">
             <div class="stars">⭐⭐⭐⭐⭐</div>
             <p style="font-style:italic;margin:16px 0;line-height:1.8;color:var(--gray-600)">
-              "Muy atentas todas las trabajadoras de mi clínica profesionales, amables. 
-              Quedo muy satisfecho cada vez que me atiendo en mi clínica. La recomiendo un 100%"
+              "Muy atentas todas las trabajadoras de mi clínica profesionales, amables. Quedo muy satisfecho cada vez que me atiendo en mi clínica. La recomiendo un 100%"
             </p>
             <div style="font-weight:700;color:var(--primary)">— Geiser Yoel Garcia Santos</div>
             <div style="font-size:13px;color:var(--gray-500);margin-top:4px">Hace 8 semanas</div>
@@ -270,8 +265,7 @@
           <div class="card testimonial">
             <div class="stars">⭐⭐⭐⭐⭐</div>
             <p style="font-style:italic;margin:16px 0;line-height:1.8;color:var(--gray-600)">
-              "Excelente servicio, todos los trabajadores son muy profesionales, 
-              muy atentos, amables. Estoy encantada con el servicio de mi clínica"
+              "Excelente servicio, todos los trabajadores son muy profesionales, muy atentos, amables. Estoy encantada con el servicio de mi clínica"
             </p>
             <div style="font-weight:700;color:var(--primary)">— Analiet Pérez Acosta</div>
             <div style="font-size:13px;color:var(--gray-500);margin-top:4px">Hace 8 semanas</div>
@@ -279,10 +273,8 @@
         </div>
 
         <div style="text-align:center;margin-top:32px">
-          <a href="https://www.google.com/maps/place/Cl%C3%ADnica+Hispana+Am%C3%A9rica/@29.714784,-95.5397048,17z/data=!3m1!4b1!4m6!3m5!1s0x8640c2e0e95d973f:0xadd9ef9116499915!8m2!3d29.714784!4d-95.5397048!16s%2Fg%2F1hc3jvy_c?hl=es-419" 
-             target="_blank" 
-             rel="noopener"
-             class="btn btn-outline">
+          <a href="https://www.google.com/maps/place/Cl%C3%ADnica+Hispana+Am%C3%A9rica/@29.714784,-95.5397048,17z/data=!3m1!4b1!4m6!3m5!1s0x8640c2e0e95d973f:0xadd9ef9116499915!8m2!3d29.714784!4d-95.5397048!16s%2Fg%2F1hc3jvy_c?hl=es-419"
+             target="_blank" rel="noopener" class="btn btn-outline">
             📝 Ver Todas las Reseñas en Google
           </a>
         </div>
@@ -293,8 +285,7 @@
       <div class="wrap">
         <h2 style="color:var(--white);margin-bottom:16px;font-size:36px">¿Listo para Cuidar su Salud?</h2>
         <p style="font-size:20px;margin-bottom:32px;max-width:700px;margin-left:auto;margin-right:auto;color:rgba(255,255,255,.95)">
-          Agende su cita hoy mismo. Estamos aquí para cuidar de usted y su familia 
-          en South Gessner, Houston.
+          Agende su cita hoy mismo. Estamos aquí para cuidar de usted y su familia en South Gessner, Houston.
         </p>
         <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center">
           <a class="btn" style="background:var(--white);color:var(--primary);font-size:18px;padding:16px 32px" href="tel:+17132710622">
@@ -322,7 +313,9 @@
               <strong>5950 South Gessner Rd, Suite C</strong><br>
               Houston, TX 77036
             </p>
-            <a class="btn btn-outline" target="_blank" href="https://www.google.com/maps/place/Cl%C3%ADnica+Hispana+Am%C3%A9rica/@29.714784,-95.5397048,17z/data=!3m1!4b1!4m6!3m5!1s0x8640c2e0e95d973f:0xadd9ef9116499915!8m2!3d29.714784!4d-95.5397048!16s%2Fg%2F1hc3jvy_c?hl=es-419" style="width:100%">
+            <a class="btn btn-outline" target="_blank"
+               href="https://www.google.com/maps/place/Cl%C3%ADnica+Hispana+Am%C3%A9rica/@29.714784,-95.5397048,17z/data=!3m1!4b1!4m6!3m5!1s0x8640c2e0e95d973f:0xadd9ef9116499915!8m2!3d29.714784!4d-95.5397048!16s%2Fg%2F1hc3jvy_c?hl=es-419"
+               style="width:100%">
               🗺️ Abrir en Google Maps
             </a>
           </div>
@@ -333,16 +326,11 @@
               <strong>Tel:</strong> (713) 271-0622<br>
               <strong>Email:</strong> <a href="mailto:citas@clinicaha.com">citas@clinicaha.com</a>
             </p>
+
             <div style="display:flex;gap:12px;margin-top:16px">
-              <a class="btn btn-primary" href="tel:+17132710622" style="flex:1">
-                📞 Llamar
-              </a>
-              <a class="btn btn-outline" href="https://wa.me/17132710622" target="_blank" style="flex:1">
-                💬 WhatsApp
-              </a>
-              <button class="btn btn-dark" onclick="abrirModal()" style="flex:1">
-                📅 Agendar
-              </button>
+              <a class="btn btn-primary" href="tel:+17132710622" style="flex:1">📞 Llamar</a>
+              <a class="btn btn-outline" href="https://wa.me/17132710622" target="_blank" style="flex:1">💬 WhatsApp</a>
+              <button class="btn btn-dark" onclick="abrirModal()" style="flex:1">📅 Agendar</button>
             </div>
 
             <div style="margin-top:16px;padding:16px;background:var(--gray-50);border-radius:12px;border-left:4px solid var(--primary)">
@@ -354,6 +342,7 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -367,30 +356,33 @@
         </div>
         <div class="muted" style="margin-bottom:16px">Houston Medical Center | 5950 South Gessner Rd, Suite C, Houston, TX 77036</div>
       </div>
-      
+
       <div style="display:flex;gap:16px;justify-content:center;align-items:center;margin-bottom:20px;flex-wrap:wrap">
         <a href="https://www.facebook.com/ClinicaHispanaAmerica" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
             <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
           </svg>
         </a>
+
         <a href="https://www.instagram.com/clinicahamerica/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Instagram">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
           </svg>
         </a>
+
         <a href="https://x.com/clinicahspna_a" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="X (Twitter)">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
             <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
           </svg>
         </a>
+
         <a href="https://www.linkedin.com/company/clinica-hispana-america/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
           </svg>
         </a>
       </div>
-      
+
       <div class="muted">© 2025 Clínica Hispana América - Todos los derechos reservados.</div>
     </div>
   </footer>
@@ -401,9 +393,7 @@
   </div>
 
   <div id="modalCita" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:99999;overflow-y:scroll;-webkit-overflow-scrolling:touch;">
-    
     <div style="background:white;border-radius:12px;max-width:500px;width:94%;margin:20px auto 80px auto;position:relative;box-shadow:0 10px 25px rgba(0,0,0,0.5);">
-      
       <div style="padding:20px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:white;border-radius:12px 12px 0 0;z-index:10;">
         <h2 style="margin:0;font-size:20px;font-weight:800">📅 Agendar Cita</h2>
         <button onclick="cerrarModal()" style="background:#f3f4f6;border:none;font-size:24px;width:36px;height:36px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
@@ -411,13 +401,13 @@
 
       <div style="padding:20px;">
         <p style="margin-bottom:20px;font-size:15px;color:#666">Complete sus datos. Le responderemos por correo o teléfono para confirmar.</p>
-        
+
         <form id="formCita" action="https://formsubmit.co/citas@clinicaha.com" method="POST">
           <input type="hidden" name="_subject" value="🏥 Nueva Solicitud de Cita - Clínica Hispana América" />
           <input type="hidden" name="_template" value="table" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_next" value="https://pruebas.clinicaha.com/gracias.html" />
-          
+
           <div style="margin-bottom:16px">
             <label style="display:block;margin-bottom:6px;font-weight:700;font-size:14px;color:#374151">Nombre Completo *</label>
             <input type="text" name="nombre" required style="width:100%;padding:12px;border:1px solid #d1d5db;border-radius:8px;font-size:16px;background:#fff" placeholder="Ingrese su nombre" />
@@ -462,10 +452,10 @@
               <option value="Sí - Seguro Privado">Sí - Seguro Privado</option>
             </select>
           </div>
-          
+
           <div style="margin-bottom:24px">
-             <label style="display:block;margin-bottom:6px;font-weight:700;font-size:14px;color:#374151">Comentarios o Dudas</label>
-             <textarea name="comentarios" rows="3" style="width:100%;padding:12px;border:1px solid #d1d5db;border-radius:8px;font-size:16px;background:#fff;resize:vertical" placeholder="¿Alguna pregunta adicional?"></textarea>
+            <label style="display:block;margin-bottom:6px;font-weight:700;font-size:14px;color:#374151">Comentarios o Dudas</label>
+            <textarea name="comentarios" rows="3" style="width:100%;padding:12px;border:1px solid #d1d5db;border-radius:8px;font-size:16px;background:#fff;resize:vertical" placeholder="¿Alguna pregunta adicional?"></textarea>
           </div>
 
           <button type="submit" style="width:100%;padding:16px;background:linear-gradient(135deg,#3b82f6 0%,#2563eb 100%);color:white;border:none;border-radius:10px;font-weight:800;font-size:18px;cursor:pointer;box-shadow:0 4px 6px rgba(37,99,235,0.2)">
@@ -481,38 +471,30 @@
       background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
       border-left: 4px solid var(--accent);
     }
-    .stars {
-      font-size: 20px;
-      letter-spacing: 2px;
-    }
+    .stars { font-size: 20px; letter-spacing: 2px; }
   </style>
 
   <script>
     function abrirModal() {
       const modal = document.getElementById("modalCita");
       if (modal) {
-        modal.style.display = "block"; // Modo Bloque (Anti-Parpadeo)
-        document.body.style.overflow = "hidden"; // Bloquea scroll del fondo
+        modal.style.display = "block";
+        document.body.style.overflow = "hidden";
       }
     }
-
     function cerrarModal() {
       const modal = document.getElementById("modalCita");
       if (modal) {
         modal.style.display = "none";
-        document.body.style.overflow = ""; // Restaura scroll
+        document.body.style.overflow = "";
         const form = document.getElementById("formCita");
         if (form) form.reset();
       }
     }
-
-    // Cerrar al hacer clic fuera
     document.addEventListener("click", function(e) {
       const modal = document.getElementById("modalCita");
       if (modal && e.target === modal) cerrarModal();
     });
-
-    // Cerrar con ESC
     document.addEventListener("keydown", function(e) {
       if (e.key === "Escape") cerrarModal();
     });
