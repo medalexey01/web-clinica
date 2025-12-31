@@ -10,16 +10,16 @@
   
   <style>
     .hero-background {
-      /* Ajuste del filtro azul: Ahora es mucho más suave (0.2 y 0.1 de opacidad) */
-      background: linear-gradient(rgba(30, 58, 138, 0.3), rgba(30, 58, 138, 0.1)), url('images/doctora-hero.png');
+      /* CAMBIO 1: El filtro azul ahora es muy suave (0.2 y 0.1) para que se vea bien la doctora */
+      background: linear-gradient(rgba(30, 58, 138, 0.2), rgba(30, 58, 138, 0.1)), url('images/doctora-hero.png');
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
     }
     
-    /* Aseguramos que el texto sea legible aunque el fondo sea más claro */
+    /* Sombra suave al texto para que se lea bien aunque el fondo sea claro */
     .hero-title, .hero-subtitle {
-      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+      text-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
   </style>
 </head>
@@ -56,9 +56,9 @@
 
   <main>
     <section class="hero-background">
-      <div class="hero-overlay"></div>
-      <div class="wrap hero-content-wrapper">
+      <div class="hero-overlay"></div> <div class="wrap hero-content-wrapper">
         <div class="hero-text-content">
+          
           <h1 class="hero-title">
             TU SALUD, <br>
             <span class="hero-highlight">NUESTRA PRIORIDAD</span>
