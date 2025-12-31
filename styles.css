@@ -1,45 +1,427 @@
 /* ============================================
-   HERO CON IMAGEN DE FONDO (Estilo Kansas Health)
+   Clínica Hispana América - styles.css (Responsive)
    ============================================ */
 
-.hero-background {
+/* ---------- Variables ---------- */
+:root{
+  --primary: #2563eb;          /* azul */
+  --primary-dark: #1e40af;
+  --primary-light: #60a5fa;
+  --accent: #f59e0b;           /* dorado */
+  --white: #ffffff;
+
+  --gray-50:#f9fafb;
+  --gray-100:#f3f4f6;
+  --gray-200:#e5e7eb;
+  --gray-300:#d1d5db;
+  --gray-500:#6b7280;
+  --gray-600:#4b5563;
+  --gray-700:#374151;
+  --gray-900:#111827;
+
+  --shadow: 0 10px 30px rgba(17,24,39,.08);
+  --radius: 16px;
+}
+
+/* ---------- Reset / base ---------- */
+*{ box-sizing:border-box; }
+html,body{
+  width:100%;
+  margin:0;
+  padding:0;
+  overflow-x:hidden;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  color: var(--gray-900);
+  background: #bfe3f2; /* coincide con tu inline */
+}
+
+a{ color:inherit; text-decoration:none; }
+img, video, iframe{ max-width:100%; height:auto; }
+
+/* ---------- Utilidades ---------- */
+.muted{ color: var(--gray-500); }
+
+/* Contenedor general */
+.wrap{
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
+
+/* Secciones */
+.section{
+  padding: 64px 0;
+  background: transparent;
+}
+
+/* Títulos */
+h1,h2,h3{
+  margin: 0 0 12px 0;
+  letter-spacing: -.02em;
+}
+h2{
+  text-align:center;
+  font-size: 34px;
+}
+.bar{
+  width: 90px;
+  height: 4px;
+  border-radius: 999px;
+  background: var(--primary);
+  margin: 14px auto 26px auto;
+}
+
+/* ---------- Barra superior de emergencia ---------- */
+.top{
+  width:100%;
+  background: #111827;
+  color: #fff;
+  padding: 10px 12px;
+  text-align:center;
+  font-weight: 800;
+  font-size: 13px;
+}
+
+/* ---------- Header / Nav ---------- */
+header{
+  width:100%;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 18px;
+  padding: 14px 16px;
+  /* aunque en tu HTML pones transparente, esto ayuda cuando no hay inline */
+  background: rgba(255,255,255,.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(229,231,235,.8);
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap: 12px;
+  min-width: 240px;
+}
+
+.brand img{
+  height: 52px;
+  width:auto;
+  display:block;
+}
+
+.brand-text{
+  display:flex;
+  flex-direction:column;
+  line-height:1.1;
+}
+
+.brand-title{
+  font-weight: 900;
+  font-size: 16px;
+  color: var(--primary-dark);
+  text-transform: uppercase;
+}
+
+.brand-subtitle{
+  font-size: 12px;
+  color: var(--gray-600);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.nav-right{
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap: 14px;
+  flex: 1;
+}
+
+.navlinks{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content:flex-end;
+}
+
+.navlink{
+  padding: 10px 12px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--gray-700);
+  transition: transform .08s ease, background .15s ease;
+  white-space: nowrap;
+}
+
+.navlink:hover{
+  background: rgba(37,99,235,.10);
+  color: var(--primary-dark);
+}
+
+/* ---------- Botones ---------- */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-weight: 900;
+  border: 1px solid transparent;
+  cursor:pointer;
+  transition: transform .08s ease, filter .15s ease, background .15s ease;
+  user-select:none;
+}
+
+.btn:active{ transform: translateY(1px); }
+
+.btn-primary{
+  background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
+  color: #fff;
+  box-shadow: 0 8px 18px rgba(37,99,235,.18);
+}
+
+.btn-outline{
+  background: transparent;
+  color: var(--primary);
+  border-color: rgba(37,99,235,.35);
+}
+
+.btn-dark{
+  background: #111827;
+  color:#fff;
+}
+
+/* ---------- HERO (tu estilo Kansas Health, responsive) ---------- */
+.hero-background{
   position: relative;
   min-height: 650px;
   height: 80vh;
   max-height: 800px;
+
   background-image: url('images/doctora-hero.png');
   background-size: cover;
-  background-position: center right;
+  background-position: center top;
   background-repeat: no-repeat;
-  display: flex;
-  align-items: center;
-  overflow: hidden;
+
+  display:flex;
+  align-items:center;
+  overflow:hidden;
 }
 
-/* Overlay oscuro semi-transparente para legibilidad */
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+/* Overlay opcional si lo usas */
+.hero-overlay{
+  position:absolute;
+  inset:0;
   background: linear-gradient(
     135deg,
     rgba(37, 99, 235, 0.85) 0%,
     rgba(30, 64, 175, 0.75) 50%,
-    rgba(0, 0, 0, 0.3) 100%
+    rgba(0, 0, 0, 0.30) 100%
   );
-  z-index: 1;
+  z-index:1;
 }
 
-.hero-content-wrapper {
+.hero-content-wrapper{
   position: relative;
   z-index: 2;
-  width: 100%;
+  width:100%;
   padding: 60px 20px;
 }
 
-.hero-text-content {
+.hero-text-content{
   max-width: 700px;
-  text-align: left;
+  text-align:left;
+}
+
+.hero-buttons{
+  display:flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.hero-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
+  padding: 14px 18px;
+  border-radius: 14px;
+  font-weight: 900;
+  border: 1px solid transparent;
+  cursor:pointer;
+  transition: transform .08s ease, filter .15s ease;
+}
+
+.hero-btn:active{ transform: translateY(1px); }
+
+.hero-btn-primary{
+  background: rgba(255,255,255,.96);
+  color: var(--primary-dark);
+}
+
+.hero-btn-secondary{
+  background: rgba(17,24,39,.55);
+  color: #fff;
+  border-color: rgba(255,255,255,.35);
+}
+
+/* ---------- Cards / Grid ---------- */
+.grid{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.card{
+  background: #fff;
+  border: 1px solid rgba(229,231,235,.9);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+
+.card h3{
+  margin-top: 8px;
+  margin-bottom: 8px;
+  font-size: 18px;
+}
+
+/* Testimonial look (tu inline agrega un gradiente; esto solo refuerza) */
+.testimonial{
+  border-left: 4px solid var(--accent);
+}
+
+/* ---------- Footer ---------- */
+footer{
+  background: rgba(255,255,255,.92);
+  border-top: 1px solid rgba(229,231,235,.9);
+  padding: 42px 0;
+}
+
+.social-icon{
+  width: 44px;
+  height: 44px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 999px;
+  border: 1px solid rgba(229,231,235,.9);
+  background: #fff;
+  color: var(--primary-dark);
+  transition: transform .08s ease, background .15s ease;
+}
+
+.social-icon:hover{
+  background: rgba(37,99,235,.08);
+}
+
+/* ---------- Floating buttons (WhatsApp/Phone) ---------- */
+.float{
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  display:flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 9999;
+}
+
+.fab{
+  width: 52px;
+  height: 52px;
+  border-radius: 999px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 22px;
+  box-shadow: 0 16px 40px rgba(0,0,0,.18);
+  border: 1px solid rgba(255,255,255,.65);
+}
+
+.fab.wa{ background:#22c55e; color:#fff; }
+.fab.ph{ background: var(--primary); color:#fff; }
+
+/* ---------- Responsive (móvil/tablet) ---------- */
+@media (max-width: 980px){
+  .grid{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px){
+  /* Nav apilado */
+  .nav{
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  .brand{
+    width:100%;
+    min-width: 0;
+  }
+
+  .brand img{ height: 44px; }
+
+  .nav-right{
+    width:100%;
+    justify-content:center;
+  }
+
+  .navlinks{
+    width:100%;
+    justify-content:center;
+  }
+
+  .navlink{
+    font-size: 13px;
+    padding: 10px 10px;
+  }
+
+  /* HERO: evita “gigante” en celular */
+  .hero-background{
+    min-height: auto;
+    height: auto;
+    max-height: none;
+    background-position: center top;
+  }
+
+  .hero-content-wrapper{
+    padding: 28px 14px;
+  }
+
+  .hero-buttons{
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hero-btn{
+    width:100%;
+    text-align:center;
+  }
+
+  /* Grid a 1 columna */
+  .grid{
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  /* Secciones un poco más compactas */
+  .section{ padding: 46px 0; }
+
+  h2{ font-size: 26px; }
+}
+
+@media (max-width: 480px){
+  .wrap{ width: min(1100px, 94vw); }
+  .top{ font-size: 12px; padding: 9px 10px; }
+  .hero-content-wrapper{ padding: 22px 12px; }
 }
