@@ -16,10 +16,10 @@
     /* --- VARIABLES DE COLOR --- */
     :root {
       --primary: #0284c7;       /* Azul médico brillante */
-      --primary-dark: #0c4a6e;  /* Azul marino profundo */
-      --accent: #f59e0b;        /* Dorado para detalles */
-      --text-dark: #1e293b;
-      --text-light: #64748b;
+      --primary-dark: #0c4a6e;  /* Azul marino profundo (Navy) */
+      --accent: #f59e0b;        /* Dorado para detalles/estrellas */
+      --text-dark: #1e293b;     /* Gris muy oscuro para lectura */
+      --text-light: #64748b;    /* Gris medio para descripciones */
       --white: #ffffff;
       --gray-bg: #f8fafc;
     }
@@ -56,7 +56,7 @@
       left: 0;
       width: 100%;
       z-index: 50;
-      border-bottom: 1px solid rgba(255,255,255,0.15);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
     }
 
     .nav {
@@ -74,18 +74,15 @@
       gap: 12px;
       text-decoration: none;
     }
-
-    .brand div {
-      color: #ffffff !important;
-      text-shadow: none;
-    }
     
     .brand-title {
+      color: #ffffff;
       font-weight: 800;
       font-style: italic;
       text-transform: uppercase;
       font-size: 18px;
       line-height: 1.1;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
 
     .nav-right {
@@ -99,7 +96,6 @@
       gap: 20px;
     }
 
-    /* Enlaces del menú mejorados */
     .navlink {
       color: #ffffff !important;
       font-size: 14px;
@@ -109,7 +105,7 @@
       padding-bottom: 4px;
       border-bottom: 2px solid transparent;
       transition: all 0.3s ease;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3); /* Sombra suave por si cae en zona clara */
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
 
     .navlink:hover {
@@ -130,23 +126,29 @@
       background: rgba(255,255,255,0.2);
       color: white;
       backdrop-filter: blur(5px);
+      border: 1px solid rgba(255,255,255,0.3);
     }
     .btn-header-schedule {
       background: var(--primary);
       color: white;
       border: none;
       cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
     }
     .btn-header-schedule:hover { background: #0284c7; transform: translateY(-2px); }
 
-    /* --- HERO SECTION (EL GRAN CAMBIO) --- */
+    /* --- HERO SECTION (AQUÍ ESTÁ LA MEJORA DE ILUMINACIÓN) --- */
     .hero-background {
       position: relative;
-      /* CLAVE: Degradado de Azul Oscuro (izquierda) a Transparente (derecha) */
+      /* DEGRADADO MEJORADO: 
+         - 0% a 40%: Azul oscuro sólido para que el texto se lea perfecto.
+         - 75%: Se vuelve muy transparente (0.2) para dejar ver la cara.
+         - 100%: Totalmente transparente.
+      */
       background: linear-gradient(90deg, 
-        rgba(10, 45, 80, 0.95) 0%, 
-        rgba(10, 45, 80, 0.85) 45%, 
-        rgba(10, 45, 80, 0.4) 70%, 
+        rgba(10, 45, 80, 0.98) 0%, 
+        rgba(10, 45, 80, 0.90) 40%, 
+        rgba(10, 45, 80, 0.20) 75%, 
         rgba(255,255,255,0) 100%), 
         url('images/doctora-hero.png');
       
@@ -154,10 +156,10 @@
       background-position: center top; 
       background-repeat: no-repeat;
       
-      min-height: 650px; /* Altura garantizada */
+      min-height: 680px; /* Un poco más alto para imponer presencia */
       display: flex;
       align-items: center;
-      padding-top: 80px; /* Compensar header */
+      padding-top: 80px; 
     }
 
     .hero-content-wrapper {
@@ -168,33 +170,32 @@
     }
 
     .hero-text-content {
-      max-width: 600px; /* Limita el texto a la izquierda */
+      max-width: 650px; /* Ancho justo para no tapar a la doctora */
     }
 
     .hero-title {
       color: #ffffff;
-      font-size: 56px; /* Título grande */
+      font-size: 56px; 
       line-height: 1.1;
       font-weight: 800;
       margin-bottom: 24px;
-      text-shadow: none; /* Ya no necesitamos sombra fea gracias al degradado */
     }
 
     .hero-highlight {
-      color: var(--primary); /* Azul claro brillante */
-      /* Opcional: Un poco de blanco si el azul es muy oscuro */
-      color: #38bdf8; 
+      color: #38bdf8; /* Celeste brillante */
+      font-style: italic;
     }
 
     .hero-subtitle {
-      color: #e2e8f0;
+      color: #f1f5f9;
       font-size: 20px;
       font-weight: 400;
       margin-bottom: 40px;
-      max-width: 500px;
+      max-width: 550px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Sombra suave para asegurar lectura */
     }
 
-    /* Botones del Hero (Estilo "Pill") */
+    /* Botones del Hero */
     .hero-buttons {
       display: flex;
       gap: 16px;
@@ -203,7 +204,7 @@
 
     .hero-btn {
       padding: 16px 32px;
-      border-radius: 50px;
+      border-radius: 50px; /* Pill shape */
       font-weight: 700;
       text-decoration: none;
       display: inline-flex;
@@ -218,18 +219,18 @@
       background: var(--white);
       color: var(--primary-dark);
       border: 2px solid var(--white);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* Sombra fuerte para resaltar */
     }
     .hero-btn-primary:hover {
       background: #f0f9ff;
       transform: translateY(-3px);
-      box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+      box-shadow: 0 15px 25px rgba(0,0,0,0.4);
     }
 
     .hero-btn-secondary {
       background: transparent;
       color: white;
-      border: 2px solid rgba(255,255,255,0.6);
+      border: 2px solid rgba(255,255,255,0.5);
     }
     .hero-btn-secondary:hover {
       background: rgba(255,255,255,0.1);
@@ -237,13 +238,8 @@
     }
 
     /* --- SECCIONES GENERALES --- */
-    .section {
-      padding: 80px 20px;
-    }
-    .wrap {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
+    .section { padding: 80px 20px; }
+    .wrap { max-width: 1100px; margin: 0 auto; }
     .bar {
       width: 60px;
       height: 4px;
@@ -271,14 +267,14 @@
       background: white;
       padding: 30px;
       border-radius: 16px;
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05), 0 2px 4px -1px rgba(0,0,0,0.03);
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
       border: 1px solid #f1f5f9;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
       border-color: var(--primary);
     }
 
@@ -288,7 +284,6 @@
       margin-bottom: 12px;
     }
 
-    /* Botón dentro de las cards */
     .btn-card {
       display: inline-block;
       margin-top: 16px;
@@ -299,6 +294,7 @@
       border-radius: 8px;
       font-weight: 600;
       font-size: 14px;
+      transition: 0.2s;
     }
     .btn-card:hover {
       background: var(--primary);
@@ -307,7 +303,7 @@
 
     /* --- TESTIMONIOS --- */
     .testimonial {
-      background: #fffbeb; /* Fondo amarillo muy suave */
+      background: #fffbeb; 
       border-left: 4px solid var(--accent);
     }
 
@@ -320,19 +316,25 @@
     .social-icon {
       color: rgba(255,255,255,0.7);
       transition: 0.3s;
+      text-decoration: none;
+      font-weight: 600;
     }
-    .social-icon:hover { color: white; transform: scale(1.1); }
+    .social-icon:hover { color: white; }
     
-    /* --- RESPONSIVE --- */
+    /* --- RESPONSIVE MOBILE --- */
     @media (max-width: 768px) {
-      .navlinks { display: none; } /* En móvil ocultamos menú (o usar hamburguesa) */
+      .navlinks { display: none; } /* Ocultar menú en móvil */
       .nav-actions { display: none; }
+      
       .hero-title { font-size: 36px; }
       .hero-background { 
-        background-position: center center; /* Centrar imagen en movil */
-        /* Degradado más oscuro en móvil para leer mejor */
-        background: linear-gradient(180deg, rgba(10, 45, 80, 0.9) 0%, rgba(10, 45, 80, 0.7) 100%), url('images/doctora-hero.png');
+        /* En móvil necesitamos que sea oscuro en todo el fondo para leer */
+        background: linear-gradient(180deg, rgba(10, 45, 80, 0.95) 0%, rgba(10, 45, 80, 0.7) 100%), url('images/doctora-hero.png');
+        background-position: center center;
+        padding-top: 40px;
+        min-height: 550px;
       }
+      .brand-title { font-size: 14px; }
     }
   </style>
 </head>
@@ -344,7 +346,7 @@
   <header>
     <div class="nav">
       <a class="brand" href="index.html">
-        <img src="images/logo.png" alt="Clínica Hispana América" style="height:52px" onerror="this.style.display='none'" />
+        <img src="images/logo.png" alt="Logo" style="height:50px" onerror="this.style.display='none'" />
         <div>
           <div class="brand-title">Clínica Hispana América</div>
           <small style="color:rgba(255,255,255,0.8); font-size:12px;">Houston Medical Center</small>
@@ -398,7 +400,7 @@
         <h2>Nuestros Servicios</h2>
         <div class="bar"></div>
         <p style="text-align:center; color:var(--text-light); margin-bottom:40px;">
-          Cuidado integral y accesible para la comunidad hispana.
+          Cuidado médico de alta calidad para la comunidad hispana.
         </p>
 
         <div class="grid">
@@ -435,17 +437,17 @@
           <div class="card" style="text-align:center; border:none; background:transparent; box-shadow:none;">
             <div style="font-size:40px;margin-bottom:12px">🗣️</div>
             <h3>Hablamos Español</h3>
-            <p style="color:var(--text-light)">Comunicación clara sin barreras de idioma. Todo nuestro personal es bilingüe.</p>
+            <p style="color:var(--text-light)">Sin barreras de idioma. Entendemos su cultura y sus necesidades.</p>
           </div>
           <div class="card" style="text-align:center; border:none; background:transparent; box-shadow:none;">
             <div style="font-size:40px;margin-bottom:12px">⚡</div>
             <h3>Resultados Rápidos</h3>
-            <p style="color:var(--text-light)">Laboratorio en sitio. Obtenga sus análisis en tiempo récord.</p>
+            <p style="color:var(--text-light)">Laboratorio propio. Obtenga sus análisis de sangre en tiempo récord.</p>
           </div>
           <div class="card" style="text-align:center; border:none; background:transparent; box-shadow:none;">
             <div style="font-size:40px;margin-bottom:12px">💰</div>
-            <h3>Precios Justos</h3>
-            <p style="color:var(--text-light)">Aceptamos seguros y ofrecemos tarifas accesibles para pacientes particulares.</p>
+            <h3>Precios Accesibles</h3>
+            <p style="color:var(--text-light)">Aceptamos seguros y ofrecemos tarifas justas para pacientes particulares.</p>
           </div>
         </div>
       </div>
@@ -463,6 +465,7 @@
               "Excelente clínica son muy amables y excelente doctora."
             </p>
             <div style="font-weight:700; color:var(--primary-dark)">— Milagros Nogueiras</div>
+            <div style="font-size:12px; color:var(--text-light)">Reseña de Google</div>
           </div>
 
           <div class="card testimonial">
@@ -471,12 +474,13 @@
               "Muy atentas todas las trabajadoras, profesionales y amables. La recomiendo al 100%."
             </p>
             <div style="font-weight:700; color:var(--primary-dark)">— Geiser Yoel Garcia</div>
+            <div style="font-size:12px; color:var(--text-light)">Reseña de Google</div>
           </div>
         </div>
         
         <div style="text-align:center; margin-top:40px;">
           <a href="https://www.google.com/maps/place/Cl%C3%ADnica+Hispana+Am%C3%A9rica/@29.714784,-95.5397048,17z/data=!3m1!4b1!4m6!3m5!1s0x8640c2e0e95d973f:0xadd9ef9116499915!8m2!3d29.714784!4d-95.5397048!16s%2Fg%2F1hc3jvy_c?hl=es-419" target="_blank" class="btn-card" style="background:transparent; border:2px solid #cbd5e1; color:var(--text-light);">
-            📝 Ver reseñas en Google
+            📝 Ver más reseñas en Google
           </a>
         </div>
       </div>
@@ -502,8 +506,8 @@
           </div>
           <div class="card">
             <h3>⏰ Horarios</h3>
-            <ul style="list-style:none; padding:0; color:var(--text-light);">
-              <li><strong>Lun - Vie:</strong> 9:00 AM - 5:00 PM</li>
+            <ul style="list-style:none; padding:0; color:var(--text-light); line-height:2;">
+              <li><strong>Lunes - Viernes:</strong> 9:00 AM - 5:00 PM</li>
               <li><strong>Sábados:</strong> 9:00 AM - 2:00 PM</li>
               <li><strong>Domingos:</strong> Cerrado</li>
             </ul>
@@ -518,9 +522,10 @@
       <div style="font-weight:800; font-size:24px; margin-bottom:8px; font-style:italic;">CLÍNICA HISPANA AMÉRICA</div>
       <div style="opacity:0.7; margin-bottom:24px;">Houston Medical Center</div>
       
-      <div style="display:flex; justify-content:center; gap:20px; margin-bottom:24px;">
+      <div style="display:flex; justify-content:center; gap:30px; margin-bottom:24px;">
         <a href="#" class="social-icon">Facebook</a>
         <a href="#" class="social-icon">Instagram</a>
+        <a href="#" class="social-icon">WhatsApp</a>
       </div>
       
       <div style="opacity:0.5; font-size:14px;">© 2025 Clínica Hispana América - Todos los derechos reservados.</div>
@@ -532,12 +537,14 @@
       
       <div style="padding:20px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center;">
         <h2 style="margin:0;font-size:20px;color:var(--text-dark)">📅 Agendar Cita</h2>
-        <button onclick="cerrarModal()" style="background:none;border:none;font-size:24px;cursor:pointer;">&times;</button>
+        <button onclick="cerrarModal()" style="background:none;border:none;font-size:24px;cursor:pointer;color:#666;">×</button>
       </div>
 
       <div style="padding:24px;">
+        <p style="margin-bottom:20px; font-size:14px; color:#666;">Complete el formulario y le confirmaremos su cita a la brevedad.</p>
+        
         <form id="formCita" action="https://formsubmit.co/citas@clinicaha.com" method="POST">
-          <input type="hidden" name="_subject" value="Nueva Cita Web" />
+          <input type="hidden" name="_subject" value="Nueva Solicitud Web - Clínica Hispana" />
           <input type="hidden" name="_next" value="https://pruebas.clinicaha.com/gracias.html" />
 
           <div style="margin-bottom:16px">
@@ -551,15 +558,17 @@
           </div>
 
           <div style="margin-bottom:16px">
-             <label style="display:block;margin-bottom:6px;font-weight:600;font-size:14px;">Motivo</label>
+             <label style="display:block;margin-bottom:6px;font-weight:600;font-size:14px;">Motivo de la visita</label>
              <select name="motivo" style="width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-family:inherit;">
                <option>Consulta General</option>
                <option>Examen I-693 Inmigración</option>
-               <option>Salud Mujer</option>
+               <option>Salud Mujer (Papanicolau/Embarazo)</option>
+               <option>Laboratorio / Análisis</option>
+               <option>Otro</option>
              </select>
           </div>
 
-          <button type="submit" style="width:100%;padding:16px;background:var(--primary);color:white;border:none;border-radius:8px;font-weight:700;font-size:16px;cursor:pointer;">
+          <button type="submit" style="width:100%;padding:16px;background:var(--primary);color:white;border:none;border-radius:8px;font-weight:700;font-size:16px;cursor:pointer; box-shadow:0 4px 6px rgba(2,132,199,0.2);">
             Enviar Solicitud
           </button>
         </form>
@@ -576,9 +585,12 @@
       document.getElementById("modalCita").style.display = "none";
       document.body.style.overflow = "";
     }
-    // Cerrar con tecla ESC
     document.addEventListener("keydown", function(e) {
       if (e.key === "Escape") cerrarModal();
+    });
+    // Cerrar al dar click fuera del modal
+    document.getElementById("modalCita").addEventListener("click", function(e) {
+      if (e.target === this) cerrarModal();
     });
   </script>
 
