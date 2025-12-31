@@ -6,29 +6,88 @@
   <title>Clínica Hispana América | Atención Médica en Español Houston, TX</title>
   <meta name="description" content="Atención médica profesional en español en Houston. Exámenes I-693 USCIS, atención primaria, salud de la mujer. Médicos certificados en South Gessner." />
   <link rel="stylesheet" href="styles.css" />
+  
+  <style>
+    /* ESTILOS FORZADOS PARA LA IMAGEN DE LA DOCTORA */
+    .hero-background {
+      /* Filtro muy suave casi invisible */
+      background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.0)), url('images/doctora-hero.png');
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      
+      /* CLAVE: Subimos la imagen para que quede detrás del menú */
+      margin-top: -90px; 
+      padding-top: 160px;
+      padding-bottom: 100px;
+    }
+
+    /* CLAVE: MENÚ TOTALMENTE TRANSPARENTE */
+    header {
+      background: transparent !important;
+      position: relative;
+      z-index: 10;
+      width: 100%;
+    }
+    
+    .nav {
+      background: transparent !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+
+    /* Texto blanco con sombra para leerse sobre la foto */
+    .hero-title {
+      color: #ffffff !important;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+    }
+    
+    .hero-subtitle {
+      color: #ffffff !important;
+      font-weight: 500;
+      text-shadow: 0 1px 5px rgba(0,0,0,0.8);
+    }
+
+    /* Enlaces del menú en blanco */
+    .navlink {
+      color: #ffffff !important;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+      font-weight: 600;
+    }
+    
+    /* Logo en blanco */
+    .brand div {
+       color: #ffffff !important;
+       text-shadow: 0 1px 4px rgba(0,0,0,0.9);
+    }
+    .brand small {
+       color: #e2e8f0 !important;
+       text-shadow: 0 1px 4px rgba(0,0,0,0.9);
+    }
+  </style>
 </head>
 <body>
   <div class="top" style="position:relative; z-index:20;">⚠️ EN CASO DE EMERGENCIA MÉDICA LLAME AL 911</div>
   
-  <header style="background: transparent !important; position: relative; z-index: 10; width: 100%;">
-    <div class="nav" style="background: transparent !important; box-shadow: none !important; border-bottom: none !important;">
+  <header>
+    <div class="nav">
       <a class="brand" href="index.html">
         <img src="images/logo.png" alt="Clínica Hispana América" style="height:52px" onerror="this.style.display='none'" />
         <div>
-          <div style="font-weight:900;font-style:italic;letter-spacing:-.025em;text-transform:uppercase;font-size:16px; color: #0f172a; text-shadow: 0 0 10px #ffffff;">
+          <div style="font-weight:900;font-style:italic;letter-spacing:-.025em;text-transform:uppercase;font-size:16px;">
             Clínica Hispana América
           </div>
-          <small style="color: #334155; font-weight: 600; text-shadow: 0 0 10px #ffffff;">Houston Medical Center</small>
+          <small>Houston Medical Center</small>
         </div>
       </a>
       <div class="nav-right">
         <nav class="navlinks">
-          <a class="navlink" href="index.html" style="color: #ffffff !important; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Inicio</a>
-          <a class="navlink" href="atencion-primaria.html" style="color: #ffffff !important; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Atención Primaria</a>
-          <a class="navlink" href="salud-mujer.html" style="color: #ffffff !important; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Salud de la Mujer</a>
-          <a class="navlink" href="examen-inmigracion.html" style="color: #ffffff !important; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Examen I-693</a>
-          <a class="navlink" href="blog.html" style="color: #ffffff !important; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Blog</a>
-          <a class="navlink" href="investigaciones.html" style="color: #ffffff !important; text-shadow: 0 1px 3px rgba(0,0,0,0.8);">Investigaciones</a>
+          <a class="navlink" href="index.html">Inicio</a>
+          <a class="navlink" href="atencion-primaria.html">Atención Primaria</a>
+          <a class="navlink" href="salud-mujer.html">Salud de la Mujer</a>
+          <a class="navlink" href="examen-inmigracion.html">Examen I-693</a>
+          <a class="navlink" href="blog.html">Blog</a>
+          <a class="navlink" href="investigaciones.html">Investigaciones</a>
         </nav>
         <div class="nav-actions">
           <a class="btn btn-dark" href="tel:+17132710622">📞 Llamar</a>
@@ -39,25 +98,16 @@
   </header>
 
   <main>
-    <section class="hero-background" style="
-      background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.0)), url('images/doctora-hero.png');
-      background-size: cover;
-      background-position: center top;
-      background-repeat: no-repeat;
-      margin-top: -90px; 
-      padding-top: 160px;
-      padding-bottom: 100px;
-    ">
-      
+    <section class="hero-background">
       <div class="wrap hero-content-wrapper">
         <div class="hero-text-content">
           
-          <h1 class="hero-title" style="color: #ffffff !important; text-shadow: 0 2px 10px rgba(0,0,0,0.8);">
+          <h1 class="hero-title">
             TU SALUD, <br>
             <span class="hero-highlight" style="color: #ffffff !important;">NUESTRA PRIORIDAD</span>
           </h1>
           
-          <p class="hero-subtitle" style="color: #ffffff !important; font-weight: 500; text-shadow: 0 1px 5px rgba(0,0,0,0.8);">
+          <p class="hero-subtitle">
             Desde exámenes de inmigración I-693 hasta salud preventiva para toda la familia. 
             Médicos certificados por USCIS en South Gessner, Houston, TX.
           </p>
@@ -434,8 +484,8 @@
     function abrirModal() {
       const modal = document.getElementById("modalCita");
       if (modal) {
-        modal.style.display = "block"; // Modo Bloque
-        document.body.style.overflow = "hidden"; 
+        modal.style.display = "block"; // Modo Bloque (Anti-Parpadeo)
+        document.body.style.overflow = "hidden"; // Bloquea scroll del fondo
       }
     }
 
@@ -443,7 +493,7 @@
       const modal = document.getElementById("modalCita");
       if (modal) {
         modal.style.display = "none";
-        document.body.style.overflow = ""; 
+        document.body.style.overflow = ""; // Restaura scroll
         const form = document.getElementById("formCita");
         if (form) form.reset();
       }
