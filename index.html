@@ -36,10 +36,17 @@
       border: none !important;
     }
 
-    /* Texto blanco con sombra para leerse sobre la foto */
+    /* Texto blanco SIN sombra */
     .hero-title {
       color: #ffffff !important;
-      text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+      text-shadow: none !important; /* ✅ QUITAR SOMBRA */
+    }
+
+    /* ✅ HACER "NUESTRA PRIORIDAD" BLANCO SIN SOMBRA */
+    .hero-title .hero-highlight{
+      color:#ffffff !important;
+      text-shadow:none !important; /* ✅ QUITAR SOMBRA */
+      -webkit-text-fill-color:#ffffff !important; /* por si algun estilo lo estaba "transparente" */
     }
     
     .hero-subtitle {
@@ -104,7 +111,7 @@
           
           <h1 class="hero-title">
             TU SALUD, <br>
-            <span class="hero-highlight" style="color: #ffffff !important;">NUESTRA PRIORIDAD</span>
+            <span class="hero-highlight" style="color: #ffffff !important; text-shadow:none !important;">NUESTRA PRIORIDAD</span>
           </h1>
           
           <p class="hero-subtitle">
