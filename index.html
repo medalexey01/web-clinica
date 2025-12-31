@@ -10,11 +10,16 @@
   
   <style>
     .hero-background {
-      /* Asegúrate de subir la imagen 'doctora-hero.png' a tu carpeta 'images' */
-      background: linear-gradient(rgba(30, 58, 138, 0.6), rgba(30, 58, 138, 0.4)), url('images/doctora-hero.png');
+      /* Ajuste del filtro azul: Ahora es mucho más suave (0.2 y 0.1 de opacidad) */
+      background: linear-gradient(rgba(30, 58, 138, 0.3), rgba(30, 58, 138, 0.1)), url('images/doctora-hero.png');
       background-size: cover;
-      background-position: center top; /* Alineado arriba para que se vea la cara de la doctora */
+      background-position: center top;
       background-repeat: no-repeat;
+    }
+    
+    /* Aseguramos que el texto sea legible aunque el fondo sea más claro */
+    .hero-title, .hero-subtitle {
+      text-shadow: 0 2px 4px rgba(0,0,0,0.5);
     }
   </style>
 </head>
@@ -54,7 +59,6 @@
       <div class="hero-overlay"></div>
       <div class="wrap hero-content-wrapper">
         <div class="hero-text-content">
-          <span class="hero-badge">🏥 Atención Médica en Español</span>
           <h1 class="hero-title">
             TU SALUD, <br>
             <span class="hero-highlight">NUESTRA PRIORIDAD</span>
@@ -373,7 +377,7 @@
           </div>
 
           <div style="margin-bottom:16px">
-            <label style="display:block;margin-bottom:6px;font-weight:700;font-size:14px;color:#374151">Email *</label>
+            <label style="display:block;margin-bottom:6px;font-weight:700;font-size:14px;color:#374151">Email (Para confirmar) *</label>
             <input type="email" name="email" required style="width:100%;padding:12px;border:1px solid #d1d5db;border-radius:8px;font-size:16px;background:#fff" placeholder="ejemplo@correo.com" />
           </div>
 
@@ -385,7 +389,7 @@
           <div style="margin-bottom:16px">
             <label style="display:block;margin-bottom:6px;font-weight:700;font-size:14px;color:#374151">Motivo de la Cita *</label>
             <select name="motivo" required style="width:100%;padding:12px;border:1px solid #d1d5db;border-radius:8px;font-size:16px;background:#fff">
-              <option value="">-- Seleccione --</option>
+              <option value="">-- Seleccione una opción --</option>
               <option value="Consulta General">Consulta General</option>
               <option value="Examen I-693 (Inmigración)">Examen I-693 (Inmigración)</option>
               <option value="Salud de la Mujer">Salud de la Mujer</option>
@@ -399,7 +403,7 @@
           <div style="margin-bottom:16px">
             <label style="display:block;margin-bottom:6px;font-weight:700;font-size:14px;color:#374151">¿Tiene Seguro Médico? *</label>
             <select name="seguro" required style="width:100%;padding:12px;border:1px solid #d1d5db;border-radius:8px;font-size:16px;background:#fff">
-              <option value="">-- Seleccione --</option>
+              <option value="">-- Seleccione una opción --</option>
               <option value="No tengo seguro">No tengo seguro</option>
               <option value="Sí - Medicare">Sí - Medicare</option>
               <option value="Sí - Medicaid">Sí - Medicaid</option>
