@@ -4,595 +4,397 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1" />
   <title>Clínica Hispana América | Atención Médica en Español Houston, TX</title>
-  <meta name="description" content="Atención médica profesional en español en Houston. Exámenes I-693 USCIS, atención primaria. Médicos certificados." />
-  
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  
+  <meta name="description" content="Atención médica profesional en español en Houston. Exámenes I-693 USCIS, atención primaria, salud de la mujer. Médicos certificados en South Gessner." />
   <link rel="stylesheet" href="styles.css" />
   
   <style>
-    /* --- VARIABLES DE COLOR --- */
-    :root {
-      --primary: #0284c7;       /* Azul médico brillante */
-      --primary-dark: #0c4a6e;  /* Azul marino profundo (Navy) */
-      --accent: #f59e0b;        /* Dorado para detalles/estrellas */
-      --text-dark: #1e293b;     /* Gris muy oscuro para lectura */
-      --text-light: #64748b;    /* Gris medio para descripciones */
-      --white: #ffffff;
-      --gray-bg: #f8fafc;
-    }
+    /* --- ESTILOS CRÍTICOS PARA EL DISEÑO (FORZADOS) --- */
 
-    /* --- TIPOGRAFÍA GLOBAL --- */
-    body {
-      font-family: 'Open Sans', sans-serif;
-      color: var(--text-dark);
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
-    
-    h1, h2, h3, h4, .btn, .navlink {
-      font-family: 'Montserrat', sans-serif;
-    }
-
-    /* --- TOP BAR (Emergencia) --- */
-    .top {
-      background-color: #ef4444; /* Rojo alerta estándar */
-      color: white;
-      text-align: center;
-      padding: 10px;
-      font-weight: 700;
-      font-size: 14px;
-      letter-spacing: 0.5px;
-    }
-
-    /* --- HEADER Y NAVEGACIÓN --- */
+    /* 1. MENÚ FLOTANTE Y TRANSPARENTE */
     header {
-      background: transparent;
-      position: absolute; /* Flota sobre el hero */
-      top: 40px; /* Debajo de la barra roja */
+      position: absolute !important; 
+      top: 35px; /* Espacio para no tapar la barra roja de emergencia */
       left: 0;
       width: 100%;
-      z-index: 50;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-    }
-
-    .nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      text-decoration: none;
+      background: transparent !important;
+      z-index: 100;
+      border: none !important;
+      box-shadow: none !important;
     }
     
-    .brand-title {
-      color: #ffffff;
-      font-weight: 800;
-      font-style: italic;
-      text-transform: uppercase;
-      font-size: 18px;
-      line-height: 1.1;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    .nav {
+      background: transparent !important;
+      box-shadow: none !important;
+      border: none !important;
     }
 
-    .nav-right {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .navlinks {
-      display: flex;
-      gap: 20px;
-    }
-
-    .navlink {
-      color: #ffffff !important;
-      font-size: 14px;
-      font-weight: 600;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding-bottom: 4px;
-      border-bottom: 2px solid transparent;
-      transition: all 0.3s ease;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-    }
-
-    .navlink:hover {
-      border-bottom: 2px solid var(--accent);
-      color: #e2e8f0 !important;
-    }
-
-    /* Botones del Header */
-    .btn-header {
-      padding: 10px 20px;
-      border-radius: 6px;
-      font-weight: 700;
-      text-decoration: none;
-      font-size: 14px;
-      transition: 0.3s;
-    }
-    .btn-header-call {
-      background: rgba(255,255,255,0.2);
-      color: white;
-      backdrop-filter: blur(5px);
-      border: 1px solid rgba(255,255,255,0.3);
-    }
-    .btn-header-schedule {
-      background: var(--primary);
-      color: white;
-      border: none;
-      cursor: pointer;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-    }
-    .btn-header-schedule:hover { background: #0284c7; transform: translateY(-2px); }
-
-    /* --- HERO SECTION (AQUÍ ESTÁ LA MEJORA DE ILUMINACIÓN) --- */
+    /* 2. FONDO DE LA DOCTORA */
     .hero-background {
-      position: relative;
-      /* DEGRADADO MEJORADO: 
-         - 0% a 40%: Azul oscuro sólido para que el texto se lea perfecto.
-         - 75%: Se vuelve muy transparente (0.2) para dejar ver la cara.
-         - 100%: Totalmente transparente.
-      */
-      background: linear-gradient(90deg, 
-        rgba(10, 45, 80, 0.98) 0%, 
-        rgba(10, 45, 80, 0.90) 40%, 
-        rgba(10, 45, 80, 0.20) 75%, 
-        rgba(255,255,255,0) 100%), 
-        url('images/doctora-hero.png');
-      
+      background: url('images/doctora-hero.png');
       background-size: cover;
-      background-position: center top; 
+      background-position: center top;
       background-repeat: no-repeat;
       
-      min-height: 680px; /* Un poco más alto para imponer presencia */
-      display: flex;
-      align-items: center;
-      padding-top: 80px; 
+      /* Ajuste para que el texto baje y no choque con el menú */
+      padding-top: 200px; 
+      padding-bottom: 120px;
+      position: relative;
+      margin-top: -90px; /* Sube la sección para quedar detrás del menú */
+      z-index: 1;
     }
 
-    .hero-content-wrapper {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-      width: 100%;
-    }
-
-    .hero-text-content {
-      max-width: 650px; /* Ancho justo para no tapar a la doctora */
-    }
-
+    /* 3. TEXTOS EN BLANCO PURO CON SOMBRA */
     .hero-title {
-      color: #ffffff;
-      font-size: 56px; 
-      line-height: 1.1;
-      font-weight: 800;
-      margin-bottom: 24px;
+      color: #ffffff !important;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.8);
     }
-
-    .hero-highlight {
-      color: #38bdf8; /* Celeste brillante */
-      font-style: italic;
-    }
-
-    .hero-subtitle {
-      color: #f1f5f9;
-      font-size: 20px;
-      font-weight: 400;
-      margin-bottom: 40px;
-      max-width: 550px;
-      text-shadow: 0 2px 4px rgba(0,0,0,0.5); /* Sombra suave para asegurar lectura */
-    }
-
-    /* Botones del Hero */
-    .hero-buttons {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .hero-btn {
-      padding: 16px 32px;
-      border-radius: 50px; /* Pill shape */
-      font-weight: 700;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    .hero-btn-primary {
-      background: var(--white);
-      color: var(--primary-dark);
-      border: 2px solid var(--white);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.3); /* Sombra fuerte para resaltar */
-    }
-    .hero-btn-primary:hover {
-      background: #f0f9ff;
-      transform: translateY(-3px);
-      box-shadow: 0 15px 25px rgba(0,0,0,0.4);
-    }
-
-    .hero-btn-secondary {
-      background: transparent;
-      color: white;
-      border: 2px solid rgba(255,255,255,0.5);
-    }
-    .hero-btn-secondary:hover {
-      background: rgba(255,255,255,0.1);
-      border-color: white;
-    }
-
-    /* --- SECCIONES GENERALES --- */
-    .section { padding: 80px 20px; }
-    .wrap { max-width: 1100px; margin: 0 auto; }
-    .bar {
-      width: 60px;
-      height: 4px;
-      background: var(--primary);
-      margin: 10px auto 20px auto;
-      border-radius: 2px;
-    }
-    h2 {
-      text-align: center;
-      color: var(--primary-dark);
-      font-size: 36px;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
-
-    /* --- CARDS / GRID --- */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
-    }
-
-    .card {
-      background: white;
-      padding: 30px;
-      border-radius: 16px;
-      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-      border: 1px solid #f1f5f9;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
-      border-color: var(--primary);
-    }
-
-    .card h3 {
-      color: var(--primary-dark);
-      font-size: 22px;
-      margin-bottom: 12px;
-    }
-
-    .btn-card {
-      display: inline-block;
-      margin-top: 16px;
-      padding: 10px 20px;
-      background: #eff6ff;
-      color: var(--primary);
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 14px;
-      transition: 0.2s;
-    }
-    .btn-card:hover {
-      background: var(--primary);
-      color: white;
-    }
-
-    /* --- TESTIMONIOS --- */
-    .testimonial {
-      background: #fffbeb; 
-      border-left: 4px solid var(--accent);
-    }
-
-    /* --- FOOTER --- */
-    footer {
-      background: var(--primary-dark);
-      color: white;
-      padding: 60px 20px 30px 20px;
-    }
-    .social-icon {
-      color: rgba(255,255,255,0.7);
-      transition: 0.3s;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .social-icon:hover { color: white; }
     
-    /* --- RESPONSIVE MOBILE --- */
-    @media (max-width: 768px) {
-      .navlinks { display: none; } /* Ocultar menú en móvil */
-      .nav-actions { display: none; }
-      
-      .hero-title { font-size: 36px; }
-      .hero-background { 
-        /* En móvil necesitamos que sea oscuro en todo el fondo para leer */
-        background: linear-gradient(180deg, rgba(10, 45, 80, 0.95) 0%, rgba(10, 45, 80, 0.7) 100%), url('images/doctora-hero.png');
-        background-position: center center;
-        padding-top: 40px;
-        min-height: 550px;
-      }
-      .brand-title { font-size: 14px; }
+    .hero-highlight {
+      color: #ffffff !important;
+    }
+    
+    .hero-subtitle {
+      color: #ffffff !important;
+      font-weight: 500;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.9);
+    }
+
+    /* 4. ENLACES DEL MENÚ EN BLANCO */
+    .navlink {
+      color: #ffffff !important;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.9);
+      font-weight: 700;
+    }
+    .navlink:hover {
+        color: #fbbf24 !important; /* Dorado al pasar el mouse */
+    }
+    
+    /* 5. LOGO EN BLANCO */
+    .brand div {
+       color: #ffffff !important;
+       text-shadow: 0 1px 5px rgba(0,0,0,0.9);
+    }
+    .brand small {
+       color: #f1f5f9 !important;
+       text-shadow: 0 1px 5px rgba(0,0,0,0.9);
+    }
+
+    /* Estilos extra para testimonios */
+    .testimonial {
+      background: linear-gradient(135deg, #fefce8 0%, #fef3c7 100%);
+      border-left: 4px solid #f59e0b;
+    }
+    .stars {
+      font-size: 20px;
+      letter-spacing: 2px;
     }
   </style>
 </head>
-
 <body>
-
-  <div class="top">⚠️ EN CASO DE EMERGENCIA MÉDICA LLAME AL 911</div>
+  <!-- BARRA DE EMERGENCIA -->
+  <div class="top" style="position:relative; z-index:101; background-color: #dc2626; color: white; padding: 10px; text-align: center; font-weight: bold; font-size: 14px;">
+    ⚠️ EN CASO DE EMERGENCIA MÉDICA LLAME AL 911
+  </div>
   
+  <!-- HEADER TRANSPARENTE -->
   <header>
     <div class="nav">
       <a class="brand" href="index.html">
-        <img src="images/logo.png" alt="Logo" style="height:50px" onerror="this.style.display='none'" />
+        <img src="images/logo.png" alt="Clínica Hispana América" style="height:52px" onerror="this.style.display='none'" />
         <div>
-          <div class="brand-title">Clínica Hispana América</div>
-          <small style="color:rgba(255,255,255,0.8); font-size:12px;">Houston Medical Center</small>
+          <div style="font-weight:900;font-style:italic;letter-spacing:-.025em;text-transform:uppercase;font-size:16px;">
+            Clínica Hispana América
+          </div>
+          <small>Houston Medical Center</small>
         </div>
       </a>
-      
       <div class="nav-right">
         <nav class="navlinks">
           <a class="navlink" href="index.html">Inicio</a>
-          <a class="navlink" href="atencion-primaria.html">Servicios</a>
-          <a class="navlink" href="examen-inmigracion.html">Inmigración</a>
+          <a class="navlink" href="atencion-primaria.html">Atención Primaria</a>
+          <a class="navlink" href="salud-mujer.html">Salud de la Mujer</a>
+          <a class="navlink" href="examen-inmigracion.html">Examen I-693</a>
           <a class="navlink" href="blog.html">Blog</a>
+          <a class="navlink" href="investigaciones.html">Investigaciones</a>
         </nav>
-        <div class="nav-actions" style="display:flex; gap:10px;">
-          <a class="btn-header btn-header-call" href="tel:+17132710622">📞 (713) 271-0622</a>
-          <button class="btn-header btn-header-schedule" onclick="abrirModal()">📅 Agendar Cita</button>
+        <div class="nav-actions">
+          <a class="btn btn-dark" href="tel:+17132710622">📞 Llamar</a>
+          <button class="btn btn-primary" onclick="abrirModal()">📅 Agendar</button>
         </div>
       </div>
     </div>
   </header>
 
   <main>
+    <!-- HERO SECTION (IMAGEN DE FONDO) -->
     <section class="hero-background">
-      <div class="hero-content-wrapper">
+      <div class="wrap hero-content-wrapper">
         <div class="hero-text-content">
-          
           <h1 class="hero-title">
             TU SALUD, <br>
             <span class="hero-highlight">NUESTRA PRIORIDAD</span>
           </h1>
-          
           <p class="hero-subtitle">
             Desde exámenes de inmigración I-693 hasta salud preventiva para toda la familia. 
             Médicos certificados por USCIS en South Gessner, Houston, TX.
           </p>
-          
           <div class="hero-buttons">
             <button class="hero-btn hero-btn-primary" onclick="abrirModal()">
               📅 Reservar Cita Ahora
             </button>
             <a class="hero-btn hero-btn-secondary" href="tel:+17132710622">
-              📞 Llamar ahora
+              📞 Llamar: (713) 271-0622
             </a>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- SERVICIOS -->
     <section class="section">
       <div class="wrap">
         <h2>Nuestros Servicios</h2>
         <div class="bar"></div>
-        <p style="text-align:center; color:var(--text-light); margin-bottom:40px;">
-          Cuidado médico de alta calidad para la comunidad hispana.
+        <p style="font-size:18px;margin-bottom:32px;text-align:center">
+          Seleccione el servicio que necesita para ver información completa.
         </p>
 
         <div class="grid">
           <div class="card" style="text-align:center">
             <div style="font-size:48px;margin-bottom:16px">🩺</div>
             <h3>Atención Primaria</h3>
-            <p style="color:var(--text-light)">Consultas generales, control de diabetes, hipertensión y laboratorio para toda la familia.</p>
-            <a href="atencion-primaria.html" class="btn-card">Ver Detalles →</a>
+            <p>Consultas generales, enfermedades crónicas, laboratorio y vacunación para toda la familia.</p>
+            <a href="atencion-primaria.html" class="btn btn-primary" style="margin-top:16px;width:100%">Ver Detalles →</a>
           </div>
 
           <div class="card" style="text-align:center">
             <div style="font-size:48px;margin-bottom:16px">👩‍⚕️</div>
             <h3>Salud de la Mujer</h3>
-            <p style="color:var(--text-light)">Papanicolaou, control prenatal, planificación familiar y chequeos ginecológicos.</p>
-            <a href="salud-mujer.html" class="btn-card">Ver Detalles →</a>
+            <p>Papanicolaou, control prenatal, planificación familiar y atención ginecológica integral.</p>
+            <a href="salud-mujer.html" class="btn btn-primary" style="margin-top:16px;width:100%;background:#ec4899">Ver Detalles →</a>
           </div>
 
-          <div class="card" style="text-align:center; border:2px solid var(--primary);">
+          <div class="card" style="text-align:center">
             <div style="font-size:48px;margin-bottom:16px">🛂</div>
-            <h3 style="color:var(--primary)">Examen I-693 USCIS</h3>
-            <p style="color:var(--text-light)">Médicos civiles autorizados. Sellado oficial y resultados rápidos para su trámite.</p>
-            <a href="examen-inmigracion.html" class="btn-card" style="background:var(--primary); color:white;">Ver Detalles →</a>
+            <h3>Examen I-693 USCIS</h3>
+            <p>Médicos civiles autorizados por USCIS. Proceso completo, sellado oficial y resultados rápidos.</p>
+            <a href="examen-inmigracion.html" class="btn btn-primary" style="margin-top:16px;width:100%">Ver Detalles →</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" style="background:var(--gray-bg)">
+    <!-- POR QUÉ ELEGIRNOS -->
+    <section class="section" style="background:var(--gray-50)">
       <div class="wrap">
-        <h2>¿Por Qué Elegirnos?</h2>
+        <h2>¿Por Qué Elegir Clínica Hispana América?</h2>
         <div class="bar"></div>
+        <p style="font-size:18px;margin-bottom:32px;text-align:center">
+          Atención de calidad que entiende sus necesidades.
+        </p>
 
         <div class="grid" style="grid-template-columns:repeat(auto-fit,minmax(250px,1fr))">
-          <div class="card" style="text-align:center; border:none; background:transparent; box-shadow:none;">
+          <div class="card" style="text-align:center">
             <div style="font-size:40px;margin-bottom:12px">🗣️</div>
-            <h3>Hablamos Español</h3>
-            <p style="color:var(--text-light)">Sin barreras de idioma. Entendemos su cultura y sus necesidades.</p>
+            <h3 style="font-size:18px">Hablamos Español</h3>
+            <p style="margin:0">Todo nuestro equipo médico se comunica en español perfectamente.</p>
           </div>
-          <div class="card" style="text-align:center; border:none; background:transparent; box-shadow:none;">
+
+          <div class="card" style="text-align:center">
+            <div style="font-size:40px;margin-bottom:12px">✅</div>
+            <h3 style="font-size:18px">Médicos Certificados</h3>
+            <p style="margin:0">Civil Surgeons autorizados oficialmente para exámenes I-693.</p>
+          </div>
+
+          <div class="card" style="text-align:center">
             <div style="font-size:40px;margin-bottom:12px">⚡</div>
-            <h3>Resultados Rápidos</h3>
-            <p style="color:var(--text-light)">Laboratorio propio. Obtenga sus análisis de sangre en tiempo récord.</p>
+            <h3 style="font-size:18px">Resultados Rápidos</h3>
+            <p style="margin:0">Laboratorio en el mismo lugar. Análisis de sangre y resultados en 2-3 días.</p>
           </div>
-          <div class="card" style="text-align:center; border:none; background:transparent; box-shadow:none;">
+
+          <div class="card" style="text-align:center">
             <div style="font-size:40px;margin-bottom:12px">💰</div>
-            <h3>Precios Accesibles</h3>
-            <p style="color:var(--text-light)">Aceptamos seguros y ofrecemos tarifas justas para pacientes particulares.</p>
+            <h3 style="font-size:18px">Aceptamos Seguros</h3>
+            <p style="margin:0">Medicare, Medicaid y seguros privados. También atendemos sin seguro.</p>
+          </div>
+          
+          <div class="card" style="text-align:center">
+            <div style="font-size:40px;margin-bottom:12px">📍</div>
+            <h3 style="font-size:18px">Ubicación Conveniente</h3>
+            <p style="margin:0">South Gessner Road, Houston. Fácil acceso y estacionamiento gratuito.</p>
+          </div>
+
+          <div class="card" style="text-align:center">
+            <div style="font-size:40px;margin-bottom:12px">⏰</div>
+            <h3 style="font-size:18px">Horarios Flexibles</h3>
+            <p style="margin:0">Abiertos lunes a viernes hasta 5 PM y sábados hasta 2 PM.</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- TESTIMONIOS -->
     <section class="section">
       <div class="wrap">
-        <h2>Pacientes Satisfechos</h2>
+        <h2>Lo Que Dicen Nuestros Pacientes</h2>
         <div class="bar"></div>
-
         <div class="grid">
           <div class="card testimonial">
-            <div style="color:#f59e0b; font-size:18px;">⭐⭐⭐⭐⭐</div>
-            <p style="font-style:italic; margin:16px 0; color:var(--text-dark);">
-              "Excelente clínica son muy amables y excelente doctora."
-            </p>
-            <div style="font-weight:700; color:var(--primary-dark)">— Milagros Nogueiras</div>
-            <div style="font-size:12px; color:var(--text-light)">Reseña de Google</div>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p style="font-style:italic;margin:16px 0;line-height:1.8;color:#4b5563">"Excelente clínica son muy amables y excelente doctora"</p>
+            <div style="font-weight:700;color:#2563eb">— Milagros Nogueiras</div>
           </div>
-
           <div class="card testimonial">
-            <div style="color:#f59e0b; font-size:18px;">⭐⭐⭐⭐⭐</div>
-            <p style="font-style:italic; margin:16px 0; color:var(--text-dark);">
-              "Muy atentas todas las trabajadoras, profesionales y amables. La recomiendo al 100%."
-            </p>
-            <div style="font-weight:700; color:var(--primary-dark)">— Geiser Yoel Garcia</div>
-            <div style="font-size:12px; color:var(--text-light)">Reseña de Google</div>
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p style="font-style:italic;margin:16px 0;line-height:1.8;color:#4b5563">"Muy atentas todas las trabajadoras, quedo muy satisfecho."</p>
+            <div style="font-weight:700;color:#2563eb">— Geiser Yoel Garcia Santos</div>
+          </div>
+          <div class="card testimonial">
+            <div class="stars">⭐⭐⭐⭐⭐</div>
+            <p style="font-style:italic;margin:16px 0;line-height:1.8;color:#4b5563">"Excelente servicio, todos muy profesionales y amables."</p>
+            <div style="font-weight:700;color:#2563eb">— Analiet Pérez Acosta</div>
           </div>
         </div>
-        
-        <div style="text-align:center; margin-top:40px;">
-          <a href="https://www.google.com/maps/place/Cl%C3%ADnica+Hispana+Am%C3%A9rica/@29.714784,-95.5397048,17z/data=!3m1!4b1!4m6!3m5!1s0x8640c2e0e95d973f:0xadd9ef9116499915!8m2!3d29.714784!4d-95.5397048!16s%2Fg%2F1hc3jvy_c?hl=es-419" target="_blank" class="btn-card" style="background:transparent; border:2px solid #cbd5e1; color:var(--text-light);">
-            📝 Ver más reseñas en Google
-          </a>
+        <div style="text-align:center;margin-top:32px">
+          <a href="https://www.google.com/maps/place/Cl%C3%ADnica+Hispana+Am%C3%A9rica/@29.714784,-95.5397048,17z" target="_blank" class="btn btn-outline">📝 Ver Todas las Reseñas en Google</a>
         </div>
       </div>
     </section>
 
-    <section class="section" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%); text-align:center; color:white;">
+    <!-- CTA FINAL -->
+    <section class="section" style="background:linear-gradient(135deg,var(--primary-light) 0%,var(--primary) 100%);color:var(--white);text-align:center">
       <div class="wrap">
-        <h2 style="color:white; margin-bottom:16px;">¿Listo para cuidar su salud?</h2>
-        <p style="font-size:18px; opacity:0.9; margin-bottom:32px;">Agende su cita hoy mismo en South Gessner, Houston.</p>
-        <button class="hero-btn" style="background:white; color:var(--primary-dark);" onclick="abrirModal()">
-          📅 Agendar Cita Ahora
-        </button>
+        <h2 style="color:var(--white);margin-bottom:16px;font-size:36px">¿Listo para Cuidar su Salud?</h2>
+        <p style="font-size:20px;margin-bottom:32px;max-width:700px;margin-left:auto;margin-right:auto;color:rgba(255,255,255,.95)">
+          Agende su cita hoy mismo. Estamos aquí para cuidar de usted y su familia 
+          en South Gessner, Houston.
+        </p>
+        <div style="display:flex;flex-wrap:wrap;gap:16px;justify-content:center">
+          <a class="btn" style="background:var(--white);color:var(--primary);font-size:18px;padding:16px 32px" href="tel:+17132710622">
+            📞 Llamar: (713) 271-0622
+          </a>
+          <button class="btn btn-outline" style="border-color:var(--white);color:var(--white);font-size:18px;padding:16px 32px" onclick="abrirModal()">
+            📅 Agendar Cita en Línea
+          </button>
+        </div>
       </div>
     </section>
 
+    <!-- CONTACTO -->
     <section id="contacto" class="section">
       <div class="wrap">
+        <h2>Contáctenos</h2>
+        <div class="bar"></div>
         <div class="grid">
           <div class="card">
             <h3>📍 Ubicación</h3>
-            <p><strong>5950 South Gessner Rd, Suite C</strong><br>Houston, TX 77036</p>
-            <a class="btn-card" target="_blank" href="https://www.google.com/maps/place/Cl%C3%ADnica+Hispana+Am%C3%A9rica/@29.714784,-95.5397048,17z/data=!3m1!4b1!4m6!3m5!1s0x8640c2e0e95d973f:0xadd9ef9116499915!8m2!3d29.714784!4d-95.5397048!16s%2Fg%2F1hc3jvy_c?hl=es-419" style="width:100%; text-align:center;">🗺️ Ver Mapa</a>
+            <p style="font-size:17px"><strong>5950 South Gessner Rd, Suite C</strong><br>Houston, TX 77036</p>
+            <a class="btn btn-outline" target="_blank" href="https://www.google.com/maps/place/Cl%C3%ADnica+Hispana+Am%C3%A9rica/@29.714784,-95.5397048,17z" style="width:100%">🗺️ Abrir en Google Maps</a>
           </div>
           <div class="card">
-            <h3>⏰ Horarios</h3>
-            <ul style="list-style:none; padding:0; color:var(--text-light); line-height:2;">
-              <li><strong>Lunes - Viernes:</strong> 9:00 AM - 5:00 PM</li>
-              <li><strong>Sábados:</strong> 9:00 AM - 2:00 PM</li>
-              <li><strong>Domingos:</strong> Cerrado</li>
-            </ul>
+            <h3>📞 Agendar / Llamar</h3>
+            <p style="font-size:17px"><strong>Tel:</strong> (713) 271-0622<br><strong>Email:</strong> citas@clinicaha.com</p>
+            <div style="display:flex;gap:12px;margin-top:16px">
+                <a class="btn btn-primary" href="tel:+17132710622" style="flex:1">📞 Llamar</a>
+                <a class="btn btn-outline" href="https://wa.me/17132710622" target="_blank" style="flex:1">💬 WhatsApp</a>
+                <button class="btn btn-dark" onclick="abrirModal()" style="flex:1">📅 Agendar</button>
+            </div>
+            <div style="margin-top:16px;padding:16px;background:#f9fafb;border-left:4px solid #2563eb">
+              <strong>🕐 Horarios:</strong><br>Lunes - Viernes: 9-5 PM<br>Sábados: 9-2 PM
+            </div>
           </div>
         </div>
       </div>
     </section>
   </main>
 
+  <!-- FOOTER -->
   <footer>
     <div class="wrap" style="text-align:center">
-      <div style="font-weight:800; font-size:24px; margin-bottom:8px; font-style:italic;">CLÍNICA HISPANA AMÉRICA</div>
-      <div style="opacity:0.7; margin-bottom:24px;">Houston Medical Center</div>
-      
-      <div style="display:flex; justify-content:center; gap:30px; margin-bottom:24px;">
-        <a href="#" class="social-icon">Facebook</a>
-        <a href="#" class="social-icon">Instagram</a>
-        <a href="#" class="social-icon">WhatsApp</a>
-      </div>
-      
-      <div style="opacity:0.5; font-size:14px;">© 2025 Clínica Hispana América - Todos los derechos reservados.</div>
+      <div style="margin-bottom:24px; font-weight:900; font-size:24px;">Clínica Hispana América</div>
+      <div class="muted">© 2025 Clínica Hispana América - Todos los derechos reservados.</div>
     </div>
   </footer>
 
-  <div id="modalCita" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:99999;overflow-y:auto;">
-    <div style="background:white;border-radius:12px;max-width:500px;width:94%;margin:40px auto;position:relative;box-shadow:0 20px 50px rgba(0,0,0,0.5);">
-      
-      <div style="padding:20px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center;">
-        <h2 style="margin:0;font-size:20px;color:var(--text-dark)">📅 Agendar Cita</h2>
-        <button onclick="cerrarModal()" style="background:none;border:none;font-size:24px;cursor:pointer;color:#666;">×</button>
+  <!-- Botones Flotantes -->
+  <div class="float">
+    <a class="fab wa" href="https://wa.me/17132710622" target="_blank">💬</a>
+    <a class="fab ph" href="tel:+17132710622">📞</a>
+  </div>
+
+  <!-- MODAL DE CITAS (INCLUIDO EN EL HTML PARA EVITAR ERRORES) -->
+  <div id="modalCita" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.85);z-index:99999;overflow-y:scroll;-webkit-overflow-scrolling:touch;">
+    <div style="background:white;border-radius:12px;max-width:500px;width:94%;margin:20px auto 80px auto;position:relative;box-shadow:0 10px 25px rgba(0,0,0,0.5);">
+      <div style="padding:20px;border-bottom:1px solid #eee;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:white;border-radius:12px 12px 0 0;z-index:10;">
+        <h2 style="margin:0;font-size:20px;font-weight:800">📅 Agendar Cita</h2>
+        <button onclick="cerrarModal()" style="background:#f3f4f6;border:none;font-size:24px;width:36px;height:36px;border-radius:50%;cursor:pointer;">✕</button>
       </div>
-
-      <div style="padding:24px;">
-        <p style="margin-bottom:20px; font-size:14px; color:#666;">Complete el formulario y le confirmaremos su cita a la brevedad.</p>
-        
+      <div style="padding:20px;">
+        <p style="margin-bottom:20px;font-size:15px;color:#666">Complete sus datos. Le responderemos por correo o teléfono.</p>
         <form id="formCita" action="https://formsubmit.co/citas@clinicaha.com" method="POST">
-          <input type="hidden" name="_subject" value="Nueva Solicitud Web - Clínica Hispana" />
+          <input type="hidden" name="_subject" value="🏥 Nueva Solicitud" />
           <input type="hidden" name="_next" value="https://pruebas.clinicaha.com/gracias.html" />
-
-          <div style="margin-bottom:16px">
-            <label style="display:block;margin-bottom:6px;font-weight:600;font-size:14px;">Nombre Completo</label>
-            <input type="text" name="nombre" required style="width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-family:inherit;" placeholder="Su nombre" />
+          
+          <div style="margin-bottom:16px"><label>Nombre Completo</label><input type="text" name="nombre" required style="width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;" /></div>
+          <div style="margin-bottom:16px"><label>Teléfono</label><input type="tel" name="telefono" required style="width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;" /></div>
+          <div style="margin-bottom:16px"><label>Email</label><input type="email" name="email" required style="width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;" /></div>
+          <div style="margin-bottom:16px"><label>Fecha</label><input type="date" name="fecha" required style="width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;" /></div>
+          <div style="margin-bottom:16px"><label>Motivo</label>
+            <select name="motivo" required style="width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;">
+              <option value="">Seleccione...</option>
+              <option>Consulta General</option>
+              <option>Examen I-693</option>
+              <option>Salud Mujer</option>
+              <option>Vacunación</option>
+              <option>Otro</option>
+            </select>
           </div>
-
-          <div style="margin-bottom:16px">
-            <label style="display:block;margin-bottom:6px;font-weight:600;font-size:14px;">Teléfono</label>
-            <input type="tel" name="telefono" required style="width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-family:inherit;" placeholder="(713) ..." />
+          <div style="margin-bottom:16px"><label>Seguro</label>
+            <select name="seguro" required style="width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;">
+              <option value="">Seleccione...</option>
+              <option>No tengo seguro</option>
+              <option>Medicare</option>
+              <option>Medicaid</option>
+              <option>Privado</option>
+            </select>
           </div>
-
-          <div style="margin-bottom:16px">
-             <label style="display:block;margin-bottom:6px;font-weight:600;font-size:14px;">Motivo de la visita</label>
-             <select name="motivo" style="width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:8px;font-family:inherit;">
-               <option>Consulta General</option>
-               <option>Examen I-693 Inmigración</option>
-               <option>Salud Mujer (Papanicolau/Embarazo)</option>
-               <option>Laboratorio / Análisis</option>
-               <option>Otro</option>
-             </select>
-          </div>
-
-          <button type="submit" style="width:100%;padding:16px;background:var(--primary);color:white;border:none;border-radius:8px;font-weight:700;font-size:16px;cursor:pointer; box-shadow:0 4px 6px rgba(2,132,199,0.2);">
-            Enviar Solicitud
-          </button>
+          <div style="margin-bottom:24px"><label>Comentarios</label><textarea name="comentarios" rows="3" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;"></textarea></div>
+          <button type="submit" style="width:100%;padding:16px;background:#2563eb;color:white;border:none;border-radius:10px;font-weight:bold;font-size:18px;">Enviar Solicitud</button>
         </form>
       </div>
     </div>
   </div>
 
+  <!-- JAVASCRIPT INTEGRADO (Para asegurar que funcione sin archivo externo) -->
   <script>
     function abrirModal() {
-      document.getElementById("modalCita").style.display = "block";
-      document.body.style.overflow = "hidden";
+      const modal = document.getElementById("modalCita");
+      if (modal) {
+        modal.style.display = "block"; 
+        document.body.style.overflow = "hidden"; 
+      }
     }
+
     function cerrarModal() {
-      document.getElementById("modalCita").style.display = "none";
-      document.body.style.overflow = "";
+      const modal = document.getElementById("modalCita");
+      if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = ""; 
+        const form = document.getElementById("formCita");
+        if (form) form.reset();
+      }
     }
+
+    // Cerrar al hacer clic fuera
+    document.addEventListener("click", function(e) {
+      const modal = document.getElementById("modalCita");
+      if (modal && e.target === modal) cerrarModal();
+    });
+
+    // Cerrar con ESC
     document.addEventListener("keydown", function(e) {
       if (e.key === "Escape") cerrarModal();
     });
-    // Cerrar al dar click fuera del modal
-    document.getElementById("modalCita").addEventListener("click", function(e) {
-      if (e.target === this) cerrarModal();
-    });
   </script>
-
 </body>
 </html>
