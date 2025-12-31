@@ -21,53 +21,6 @@
     main{
       background:#ffffff;
     }
-
-    /* ✅ AZUL OSCURO MARINO PARA TODO EL MENÚ */
-    :root{
-      --nav-blue-dark: #0b3a66;
-      --nav-blue-darker: #082a4a;
-    }
-
-    /* Todos los enlaces del menú en azul marino */
-    header .nav a,
-    header .nav a *,
-    header .navlink,
-    header .navlinks a,
-    header .brand,
-    header .brand *,
-    header .brand-title,
-    header .brand-subtitle,
-    header .brand-text,
-    header .brand-text * {
-      color: var(--nav-blue-dark) !important;
-      text-shadow: none !important;
-      font-weight: 700 !important;
-    }
-
-    /* Hover en enlaces */
-    header .nav a:hover,
-    header .navlink:hover {
-      color: var(--nav-blue-darker) !important;
-      background: rgba(11,58,102,0.10) !important;
-      border-radius: 999px !important;
-    }
-
-    /* Brand específico */
-    header .brand-title {
-      font-weight: 800 !important;
-      text-transform: uppercase !important;
-      letter-spacing: 0.4px !important;
-      font-size: 16px !important;
-      line-height: 1.1 !important;
-    }
-
-    header .brand-subtitle {
-      font-weight: 700 !important;
-      text-transform: uppercase !important;
-      font-size: 12px !important;
-      opacity: 0.95 !important;
-      line-height: 1.1 !important;
-    }
   </style>
 </head>
 
@@ -77,24 +30,32 @@
   <header style="background: transparent !important; position: relative; z-index: 10; width: 100%; margin:0 !important; padding:0 !important; border:0 !important; box-shadow:none !important;">
     <div class="nav" style="background: transparent !important; box-shadow: none !important; border-bottom: none !important; margin:0 !important;">
 
-      <!-- ✅ BRAND: azul oscuro marino -->
-      <a class="brand" href="index.html" style="color: #0b3a66 !important; text-decoration: none;">
+      <!-- ✅ BRAND: ahora usa clases (azul oscuro desde styles.css) -->
+      <a class="brand" href="index.html">
         <img src="images/logo.png" alt="Clínica Hispana América" style="height:52px" onerror="this.style.display='none'" />
         <div class="brand-text">
-          <div class="brand-title" style="color: #0b3a66 !important; font-weight: 800 !important;">CLÍNICA HISPANA AMÉRICA</div>
-          <small class="brand-subtitle" style="color: #0b3a66 !important; font-weight: 700 !important;">HOUSTON MEDICAL CENTER</small>
+          <div class="brand-title">CLÍNICA HISPANA AMÉRICA</div>
+          <small class="brand-subtitle">HOUSTON MEDICAL CENTER</small>
         </div>
       </a>
 
       <div class="nav-right">
         <nav class="navlinks">
-          <a class="navlink" href="index.html" style="color: #0b3a66 !important; font-weight: 700 !important;">Inicio</a>
-          <a class="navlink" href="atencion-primaria.html" style="color: #0b3a66 !important; font-weight: 700 !important;">Medicina General</a>
-          <a class="navlink" href="salud-mujer.html" style="color: #0b3a66 !important; font-weight: 700 !important;">Salud de la Mujer</a>
-          <a class="navlink" href="examen-inmigracion.html" style="color: #0b3a66 !important; font-weight: 700 !important;">Examen de Inmigración</a>
-          <a class="navlink" href="blog.html" style="color: #0b3a66 !important; font-weight: 700 !important;">Blog</a>
-          <a class="navlink" href="investigaciones.html" style="color: #0b3a66 !important; font-weight: 700 !important;">Investigaciones</a>
+          <a class="navlink" href="index.html">Inicio</a>
+          <a class="navlink" href="atencion-primaria.html">Medicina General</a>
+          <a class="navlink" href="salud-mujer.html">Salud de la Mujer</a>
+          <a class="navlink" href="examen-inmigracion.html">Examen de Inmigración</a>
+          <a class="navlink" href="blog.html">Blog</a>
+          <a class="navlink" href="investigaciones.html">Investigaciones</a>
         </nav>
+
+        <!-- ✅ Eliminados los botones del menú superior -->
+        <!--
+        <div class="nav-actions">
+          <a class="btn btn-dark" href="tel:+17132710622">📞 Llamar</a>
+          <button class="btn btn-primary" onclick="abrirModal()">📅 Agendar</button>
+        </div>
+        -->
       </div>
 
     </div>
@@ -107,7 +68,7 @@
       background-position: center top;
       background-repeat: no-repeat;
       margin-top: 0px;
-      padding-top: 220px;
+      padding-top: 220px;     /* ✅ más abajo para no tapar la cara */
       padding-bottom: 100px;
     ">
       <div class="wrap hero-content-wrapper">
@@ -122,6 +83,7 @@
             </a>
           </div>
 
+          <!-- ✅ Texto movido debajo de los botones -->
           <p class="hero-subtitle" style="color: #ffffff !important; font-weight: 500; text-shadow: 0 1px 5px rgba(0,0,0,0.8); margin-top: 24px;">
             Desde exámenes de inmigración I-693 hasta salud preventiva para toda la familia. Médicos certificados por USCIS en South Gessner, Houston, TX.
           </p>
