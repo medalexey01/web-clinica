@@ -1,85 +1,134 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>¡Gracias! - Clínica Hispana América</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>¡Gracias! | Clínica Hispana América</title>
+
+  <!-- SEO Técnico -->
+  <meta name="robots" content="noindex, follow">
+
+  <!-- Typography -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+
   <style>
-    .thankyou-container {
-      min-height: 80vh;
+    :root {
+      --azul-navy: #0A1E3C;
+      --azul-primary: #1E40AF;
+      --azul-claro: #F0F9FF;
+      --text-color: #334155;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align: center;
-      padding: 40px 20px;
+      height: 100vh;
+      color: var(--text-color);
     }
-    .thankyou-card {
-      max-width: 600px;
+
+    .card {
       background: white;
       padding: 60px 40px;
-      border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+      border-radius: 24px;
+      box-shadow: 0 25px 50px -12px rgba(10, 30, 60, 0.15);
+      text-align: center;
+      max-width: 500px;
+      width: 90%;
+      border-top: 10px solid var(--azul-primary);
+      animation: slideUp 0.6s ease-out;
     }
-    .success-icon {
-      font-size: 80px;
-      margin-bottom: 20px;
-      animation: bounce 0.6s ease;
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    @keyframes bounce {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+
+    .check-icon {
+      width: 100px;
+      height: 100px;
+      background: var(--azul-claro);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 30px;
+      color: var(--azul-primary);
+      font-size: 50px;
+      box-shadow: 0 10px 20px rgba(30, 64, 175, 0.1);
+    }
+
+    h1 {
+      margin: 0 0 15px;
+      color: var(--azul-navy);
+      font-size: 36px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 18px;
+      color: #64748b;
+      margin-bottom: 35px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--azul-navy);
+      color: white;
+      text-decoration: none;
+      padding: 18px 40px;
+      border-radius: 50px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: all 0.3s;
+      box-shadow: 0 10px 25px rgba(10, 30, 60, 0.2);
+    }
+
+    .btn:hover {
+      background: var(--azul-primary);
+      transform: translateY(-3px);
+      box-shadow: 0 15px 30px rgba(10, 30, 60, 0.3);
+    }
+
+    .footer-note {
+      margin-top: 40px;
+      font-size: 14px;
+      color: #94a3b8;
+      font-style: italic;
     }
   </style>
 </head>
+
 <body>
-  <div class="top">⚠️ EN CASO DE EMERGENCIA MÉDICA LLAME AL 911</div>
-  
-  <header>
-    <div class="nav">
-      <a class="brand" href="index.html">
-        <img src="images/logo.png" alt="Clínica Hispana América" style="height:52px" onerror="this.style.display='none'" />
-        <div>
-          <div style="font-weight:900;font-style:italic;letter-spacing:-.025em;text-transform:uppercase;font-size:16px">
-            Clínica Hispana América
-          </div>
-          <small>Houston Medical Center</small>
-        </div>
-      </a>
-    </div>
-  </header>
-
-  <main>
-    <div class="thankyou-container">
-      <div class="thankyou-card">
-        <div class="success-icon">✅</div>
-        <h1 style="font-size:36px;margin-bottom:16px;color:#059669">¡Solicitud Recibida!</h1>
-        <p style="font-size:20px;line-height:1.8;color:#4b5563;margin-bottom:32px">
-          Gracias por contactar a Clínica Hispana América.<br>
-          Hemos recibido su solicitud de cita.
-        </p>
-        <div style="background:#f0fdf4;border-left:4px solid #10b981;padding:24px;border-radius:12px;text-align:left;margin-bottom:32px">
-          <h3 style="margin:0 0 12px 0;color:#059669">📧 Revise su email</h3>
-          <p style="margin:0;color:#374151">
-            Hemos enviado un email de confirmación con todos los detalles de su solicitud.
-            Nos pondremos en contacto con usted dentro de las próximas <strong>24 horas</strong>.
-          </p>
-        </div>
-        <div style="margin-bottom:32px">
-          <h3 style="margin-bottom:16px">📞 ¿Necesita atención urgente?</h3>
-          <a href="tel:+17132710622" class="btn btn-primary" style="display:inline-block">
-            Llamar: (713) 271-0622
-          </a>
-        </div>
-        <a href="index.html" class="btn btn-outline">← Volver al Inicio</a>
-      </div>
-    </div>
-  </main>
-
-  <footer>
-    <div class="wrap" style="text-align:center;padding:40px 20px">
-      <div class="muted">© 2025 Clínica Hispana América - Todos los derechos reservados.</div>
-    </div>
-  </footer>
+  <div class="card" style="border-top: 10px solid var(--elite-gold);">
+    <div class="check-icon" style="background: var(--elite-white); color: var(--elite-gold);">✓</div>
+    <h1 style="color: var(--elite-navy); font-family: 'Playfair Display', serif; font-style: italic;">¡Todo listo!</h1>
+    <p style="color: var(--elite-text); font-weight: 500;">
+      Hemos recibido su solicitud de prioridad clínica. Nuestro equipo de coordinación médica le contactará a la
+      brevedad para confirmar su espacio.
+    </p>
+    <a href="index.html" class="btn" style="background: var(--elite-navy); border-radius: 5px;">Regresar a la
+      Clínica</a>
+    <div class="footer-note" style="color: var(--elite-gold); font-weight: 700; letter-spacing: 1px;">CLÍNICA HISPANA
+      AMÉRICA</div>
+  </div>
 </body>
+
 </html>

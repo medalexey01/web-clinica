@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Clínica Hispana América | Houston Medical Center</title>
+  
+  <style>
+    /* 1. RESET Y VARIABLES */
+    html, body { margin:0; padding:0; width:100%; overflow-x:hidden; font-family: 'Segoe UI', 'Roboto', Helvetica, Arial, sans-serif; }
+    body { background: #f8fafc; color: #334155; }
+    
+    :root { 
+        --azul-oscuro: #0f172a; 
+        --azul-navy: #1e3a8a; 
+        --azul-primary: #2563eb; 
+        --azul-hover: #1d4ed8;
+        --azul-claro: #eff6ff;
+        --gris-claro: #f1f5f9;
+        --gris-texto: #475569;
+        --blanco: #ffffff;
+        --borde: #e2e8f0;
+        --btn-radius: 50px; 
+    }
+
+    /* 2. BARRA DE EMERGENCIA */
+    .top-bar { background: #dc2626; color: white; text-align: center; padding: 8px 15px; font-weight: 700; position: fixed; top: 0; left: 0; width: 100%; z-index: 2000; font-size: 13px; height: 36px; display: flex; align-items: center; justify-content: center; }
+
+    /* 3. HEADER */
+    header { position: fixed; top: 36px; left: 0; width: 100%; background: rgba(255,255,255,0.98); z-index: 1000; box-shadow: 0 1px 3px rgba(0,0,0,0.05); height: 80px; backdrop-filter: blur(8px); }
+    .nav-container { max-width: 1250px; margin: 0 auto; padding: 0 15px; height: 100%; display: flex; justify-content: space-between; align-items: center; }
+    .brand { display: flex; align-items: center; text-decoration: none; height: 100%; }
+    .brand img { height: 45px; margin-right: 10px; width: auto; }
+    .brand-text { display: flex; flex-direction: column; justify-content: center; line-height: 1.2; }
+    .brand-title { font-weight: 800; font-size: 16px; color: var(--azul-oscuro); text-transform: uppercase; }
+    .brand-subtitle { font-size: 10px; color: var(--azul-primary); font-weight: 600; }
+
+    /* MENÚ DESKTOP */
+    .desktop-menu { display: flex; gap: 4px; }
+    .desktop-menu a { text-decoration: none; color: var(--azul-oscuro); font-weight: 600; font-size: 14px; padding: 10px 12px; transition: 0.2s; }
+    .desktop-menu a:hover { color: var(--azul-primary); }
+    .btn-contact-nav { background: var(--azul-primary); color: white !important; border-radius: 6px; margin-left: 10px; }
+
+    /* MENÚ MÓVIL */
+    .hamburger-btn { display: none; background: none; border: none; cursor: pointer; padding: 10px; }
+    .hamburger-icon { font-size: 28px; color: var(--azul-oscuro); }
+    .mobile-menu-overlay { display: none; position: absolute; top: 80px; left: 0; width: 100%; background: white; flex-direction: column; border-top: 1px solid #eee; box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+    .mobile-menu-overlay a { padding: 16px 24px; border-bottom: 1px solid #f1f5f9; text-decoration: none; color: var(--azul-oscuro); font-weight: 600; font-size: 16px; }
+    .show-menu { display: flex !important; }
+
+    @media (max-width: 1050px) { 
+        .desktop-menu { display: none !important; } 
+        .hamburger-btn { display: block !important; } 
+    }
+
+    /* 4. HERO ENSANCHADO */
+    .hero-background { 
+        background-image: url('images/doctora-hero.png'); 
+        background-size: cover; 
+        background-position: center center; 
+        padding: 0; 
+        margin-top: 116px; 
+        min-height: 600px; 
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    @media (min-width: 1600px) { .hero-background { min-height: 750px; } }
+    @media (max-width: 768px) { .hero-background { min-height: 400px; background-position: center top; } }
+
+    .hero-content { max-width: 1200px; margin: 0 auto; padding: 0 20px; text-align: center; }
+    .hero-content h1 { 
+        color: var(--azul-navy); 
+        font-size: clamp(28px, 5vw, 42px); 
+        font-weight: 800; 
+        margin-bottom: 30px; 
+        text-transform: uppercase; 
+        text-shadow: 0px 0px 15px rgba(255,255,255,0.9), 2px 2px 4px rgba(255,255,255,1);
+    }
+    
+    .hero-buttons { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
+    .hero-btn { display: inline-flex; align-items: center; justify-content: center; padding: 16px 36px; border-radius: var(--btn-radius); font-weight: 700; cursor: pointer; border: none; text-decoration: none; background: var(--azul-primary); color: white; transition: 0.3s; box-shadow: 0 4px 12px rgba(37,99,235,0.2); }
+    .hero-btn:hover { background: var(--azul-hover); transform: translateY(-3px); }
+
+    /* 5. SECCIONES Y TARJETAS */
+    .section { padding: 60px 0; }
+    .wrap { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+    .section-title { text-align: center; color: var(--azul-oscuro); font-size: 32px; font-weight: 800; margin-bottom: 10px; }
+    .bar { width: 60px; height: 5px; background: var(--azul-primary); margin: 0 auto 30px; border-radius: 3px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+    
+    .card { background: white; padding: 30px; border-radius: 16px; border: 1px solid var(--borde); transition: 0.3s; display: flex; flex-direction: column; text-align: center; }
+    .card:hover { transform: translateY(-5px); border-color: var(--azul-primary); box-shadow: 0 15px 30px rgba(0,0,0,0.08); }
+    .card h3 { font-size: 20px; color: var(--azul-oscuro); margin-bottom: 15px; }
+    .card p { color: var(--gris-texto); line-height: 1.6; margin-bottom: 15px; flex-grow: 1; }
+    .btn-small { background: var(--azul-claro); color: var(--azul-primary); padding: 12px; border-radius: 50px; text-decoration: none; font-weight: 700; border: none; cursor: pointer; margin-top: auto; }
+
+    /* TESTIMONIOS */
+    .testimonial-card { font-style: italic; }
+    .stars { color: #f59e0b; font-size: 20px; margin-bottom: 10px; }
+    .author { font-weight: 700; color: var(--azul-oscuro); margin-top: 15px; display: block; font-style: normal; }
+
+    /* CONTACTO */
+    #contacto { padding-top: 20px; }
+    .contact-wrapper { display: flex; gap: 50px; align-items: flex-start; justify-content: center; flex-wrap: wrap; }
+    .contact-buttons-container { display: flex; flex-direction: column; gap: 12px; width: 100%; max-width: 450px; }
+    .contact-full-btn { 
+        display: flex; align-items: center; justify-content: center; 
+        background: var(--azul-primary); color: white; text-decoration: none; 
+        padding: 15px 25px; border-radius: 50px; font-size: 17px; font-weight: 700; 
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: 0.3s; width: 100%; box-sizing: border-box; 
+    }
+    .contact-full-btn:hover { background: var(--azul-hover); transform: translateY(-2px); }
+
+    .schedule-card { background: white; border-radius: 20px; padding: 25px; border: 1px solid var(--borde); width: 100%; max-width: 350px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); }
+    .schedule-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px dashed #e2e8f0; }
+
+    /* FOOTER */
+    footer { background: var(--azul-oscuro); color: white; padding: 60px 0 40px; text-align: center; }
+    .footer-social-row { display: flex; justify-content: center; gap: 15px; margin-bottom: 30px; flex-wrap: wrap; }
+    .social-circle { background: white; width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.2s; }
+    .social-circle svg { width: 24px; height: 24px; }
+    .social-circle:hover { transform: translateY(-3px); }
+    
+    .disclaimer-text { font-size: 12px; color: #94a3b8; max-width: 900px; margin: 0 auto 25px; line-height: 1.6; padding: 0 15px; font-style: italic; }
+    .footer-links { margin-bottom: 20px; }
+    .footer-links a { color: #cbd5e1; text-decoration: none; margin: 0 15px; font-size: 14px; }
+
+    /* MODAL */
+    #modalCita { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:99999; backdrop-filter: blur(5px); }
+    .modal-content { background:white; border-radius:16px; max-width:450px; width:90%; margin:40px auto; padding:30px; position:relative; box-shadow: 0 25px 50px rgba(0,0,0,0.25); }
+    .close-modal { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: #999; border: none; background: none; }
+    .form-input { width: 100%; padding: 12px; border: 2px solid #f1f5f9; border-radius: 10px; margin-bottom: 12px; box-sizing: border-box; font-family: inherit; }
+    .submit-btn { width: 100%; background: var(--azul-navy); color: white; padding: 14px; border: none; border-radius: 50px; font-weight: 700; cursor: pointer; font-size: 16px; }
+
+    /* FLOAT BUTTONS */
+    .float-container { position: fixed; bottom: 20px; right: 20px; display: flex; flex-direction: column; gap: 15px; z-index: 1500; }
+    .float-btn { width: 55px; height: 55px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-decoration: none; font-size: 26px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); color: white; }
+    .float-ph { background: var(--azul-primary); }
+    .float-wa { background: #25d366; }
+  </style>
+</head>
+
+<body>
+
+  <div class="top-bar">⚠️ EN CASO DE EMERGENCIA MÉDICA LLAME AL 911</div>
+
+  <header>
+    <div class="nav-container">
+      <a class="brand" href="index.html">
+        <img src="images/logo.png" alt="Logo">
+        <div class="brand-text">
+          <span class="brand-title">CLÍNICA HISPANA AMÉRICA</span>
+          <small class="brand-subtitle">HOUSTON MEDICAL CENTER</small>
+        </div>
+      </a>
+      <nav class="desktop-menu">
+        <a href="index.html" class="active-link">Inicio</a>
+        <a href="atencion-primaria.html">Medicina General</a>
+        <a href="salud-mujer.html">Salud Mujer</a>
+        <a href="vitaminas.html" style="color:#10b981; font-weight:700;">Medical Spa</a>
+        <a href="examen-inmigracion.html">Inmigración</a>
+        <a href="investigaciones.html">Investigación</a>
+        <a href="blog.html">Blog</a>
+        <a href="#contacto" class="btn-contact-nav">Contacto</a>
+      </nav>
+      <button class="hamburger-btn" onclick="toggleMobileMenu()">
+        <span class="hamburger-icon">☰</span>
+      </button>
+    </div>
+    <div id="mobileMenu" class="mobile-menu-overlay">
+      <a href="index.html" onclick="toggleMobileMenu()">Inicio</a>
+      <a href="atencion-primaria.html" onclick="toggleMobileMenu()">Medicina General</a>
+      <a href="salud-mujer.html" onclick="toggleMobileMenu()">Salud Mujer</a>
+      <a href="vitaminas.html" onclick="toggleMobileMenu()">Medical Spa</a>
+      <a href="examen-inmigracion.html" onclick="toggleMobileMenu()">Inmigración</a>
+      <a href="investigaciones.html" onclick="toggleMobileMenu()">Investigación</a>
+      <a href="blog.html" onclick="toggleMobileMenu()">Blog</a>
+      <a href="#contacto" onclick="toggleMobileMenu()">Contacto</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-background">
+      <div class="hero-content">
+        <h1>SU SALUD ES NUESTRA PRIORIDAD</h1>
+        <div class="hero-buttons">
+          <button class="hero-btn" onclick="abrirModal()">📅 Agendar Cita</button>
+          <a class="hero-btn" href="tel:+17132710622" style="background:white; color:var(--azul-navy); font-weight:700;">📞 (713) 271-0622</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2 class="section-title">Nuestros Servicios Principales</h2>
+        <div class="bar"></div>
+        <div class="grid">
+          <div class="card">
+            <h3>🩺 Medicina General</h3>
+            <p>Atención médica de calidad para toda la familia, control de diabetes y presión.</p>
+            <a href="atencion-primaria.html" class="btn-small">Ver Detalles</a>
+          </div>
+          <div class="card">
+            <h3>🌸 Salud de la Mujer</h3>
+            <p>Especialistas en bienestar femenino, papanicolaou y control hormonal.</p>
+            <a href="salud-mujer.html" class="btn-small">Ver Detalles</a>
+          </div>
+          <div class="card">
+            <h3>📑 Examen Inmigración</h3>
+            <p>Civil Surgeons autorizados para completar su formulario I-693 de USCIS.</p>
+            <a href="examen-inmigracion.html" class="btn-small">Ver Detalles</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:#f1f5f9;">
+        <div class="wrap">
+            <h2 class="section-title">Pacientes Satisfechos</h2>
+            <div class="bar"></div>
+            <div class="grid">
+                <div class="card testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Excelente atención, el personal muy amable y profesional. Me sentí muy cómoda en mi consulta."</p>
+                    <span class="author">María G.</span>
+                </div>
+                <div class="card testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"Rápidos y eficientes. Me hice mis exámenes de laboratorio y tuve los resultados muy pronto."</p>
+                    <span class="author">Juan P.</span>
+                </div>
+                <div class="card testimonial-card">
+                    <div class="stars">★★★★★</div>
+                    <p>"La mejor clínica hispana en Houston. Precios justos y trato humano."</p>
+                    <span class="author">Ana L.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="section" style="background: white;">
+      <div class="wrap">
+        <h2 class="section-title">Contáctenos</h2> 
+        <div class="bar"></div>
+        <div class="contact-wrapper">
+          <div class="contact-buttons-container">
+              <button onclick="abrirModal()" class="contact-full-btn">📅 Agendar Cita</button>
+              <a href="tel:+17132710622" class="contact-full-btn">📞 Tel: 713-271-0622</a>
+              <a href="http://googleusercontent.com/maps.google.com/3" target="_blank" class="contact-full-btn">📍 5950 S Gessner Rd, Houston</a>
+              <a href="mailto:citas@clinicaha.com" class="contact-full-btn">✉️ citas@clinicaha.com</a>
+          </div>
+          <div class="schedule-card">
+              <div style="font-weight:800; margin-bottom:15px; color:var(--azul-oscuro); text-transform:uppercase;">Horario de Atención</div>
+              <div class="schedule-row"><span>Lunes - Viernes</span><span>8:00 AM - 6:00 PM</span></div>
+              <div class="schedule-row"><span>Sábado</span><span>9:00 AM - 2:00 PM</span></div>
+              <div class="schedule-row"><span>Domingo</span><span style="color: #ef4444; font-weight:bold;">Cerrado</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <h3 style="margin-bottom:20px; font-size:22px;">CLÍNICA HISPANA AMÉRICA</h3>
+      
+      <!-- REDES SOCIALES ACTUALIZADAS: Face, Insta, Youtube, X -->
+      <div class="footer-social-row">
+          <!-- Facebook -->
+          <a href="https://www.facebook.com/ClinicaHispanaAmerica" target="_blank" class="social-circle" title="Facebook">
+              <svg viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073C0 18.1 4.388 23.094 10.125 24v-8.437h-3.047v-3.49h3.047v-2.642c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.49h-2.796V24C19.612 23.094 24 18.1 24 12.073z"/></svg>
+          </a>
+          <!-- Instagram -->
+          <a href="https://www.instagram.com/clinicahamerica/" target="_blank" class="social-circle" title="Instagram">
+              <svg viewBox="0 0 24 24" fill="#E4405F"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <!-- YouTube -->
+          <a href="https://www.youtube.com/" target="_blank" class="social-circle" title="YouTube">
+              <svg viewBox="0 0 24 24" fill="#FF0000"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <!-- X (Antiguo Twitter) -->
+          <a href="https://x.com/" target="_blank" class="social-circle" title="X (Twitter)">
+              <svg viewBox="0 0 24 24" fill="#000000"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
+          </a>
+      </div>
+
+      <p class="disclaimer-text">Aviso Legal: toda la información que se da en esta web no sustituye la opinión de un médico. En caso de emergencia médica, llame al 911 inmediatamente.</p>
+
+      <div class="footer-links">
+          <a href="index.html">Inicio</a>
+          <a href="atencion-primaria.html">Servicios</a>
+          <a href="#contacto">Contacto</a>
+          <a href="privacidad.html">Privacidad</a>
+      </div>
+      <p style="color:#94a3b8; font-size:14px; margin-top:20px;">© 2026 Clínica Hispana América. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <div id="modalCita">
+    <div class="modal-content">
+      <button onclick="cerrarModal()" class="close-modal">×</button>
+      <h2 style="margin-top:0; color:var(--azul-navy); text-align:center; font-weight:800; text-transform:uppercase; font-size:22px; margin-bottom:20px;">📅 Agendar Cita</h2>
+      <form action="https://formsubmit.co/citas@clinicaha.com" method="POST">
+        <label>Nombre Completo *</label>
+        <input type="text" name="nombre" required class="form-input">
+        <label>Teléfono *</label>
+        <input type="tel" name="telefono" required class="form-input">
+        <label>Servicio Requerido *</label>
+        <select name="servicio" required class="form-input">
+          <option value="" disabled selected>Seleccione...</option>
+          <option value="Medicina General">Medicina General</option>
+          <option value="Salud de la Mujer">Salud de la Mujer</option>
+          <option value="Examen Inmigracion">Examen Inmigración</option>
+          <option value="Medical Spa">Medical Spa</option>
+        </select>
+        <button type="submit" class="submit-btn">ENVIAR SOLICITUD</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="float-container">
+      <a href="tel:+17132710622" class="float-btn float-ph">📞</a>
+      <a href="https://wa.me/17132710622" class="float-btn float-wa">💬</a>
+  </div>
+
+  <script>
+    function toggleMobileMenu() { var menu = document.getElementById("mobileMenu"); if(menu) menu.classList.toggle("show-menu"); }
+    function abrirModal() { document.getElementById("modalCita").style.display = "block"; document.body.style.overflow = "hidden"; }
+    function cerrarModal() { document.getElementById("modalCita").style.display = "none"; document.body.style.overflow = ""; }
+    window.onclick = function(e) { if(e.target == document.getElementById("modalCita")) cerrarModal(); }
+  </script>
+</body>
+</html>

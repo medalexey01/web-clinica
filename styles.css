@@ -1,427 +1,718 @@
-/* ============================================
-   Clínica Hispana América - styles.css (Responsive)
-   ============================================ */
+/* ========================================
+   CLÍNICA HISPANA AMÉRICA - Elite Transformation v5.0
+   Design: Minimalist Premium / Silent Luxury
+   ======================================== */
 
-/* ---------- Variables ---------- */
-:root{
-  --primary: #2563eb;          /* azul */
-  --primary-dark: #1e40af;
-  --primary-light: #60a5fa;
-  --accent: #f59e0b;           /* dorado */
-  --white: #ffffff;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-  --gray-50:#f9fafb;
-  --gray-100:#f3f4f6;
-  --gray-200:#e5e7eb;
-  --gray-300:#d1d5db;
-  --gray-500:#6b7280;
-  --gray-600:#4b5563;
-  --gray-700:#374151;
-  --gray-900:#111827;
+:root {
+    /* Elite Color Palette */
+    --elite-navy: #0a192f;
+    /* Deep Royal Navy */
+    --elite-gold: #c5a059;
+    /* Muted Gold Accent */
+    --elite-white: #fafaf9;
+    /* Off-white / Champagne */
+    --elite-text: #1e293b;
+    /* Slate Slate for contrast */
+    --elite-accent: #0ea5e9;
+    /* Clinical Sky Blue */
+    --elite-gray: #f8fafc;
 
-  --shadow: 0 10px 30px rgba(17,24,39,.08);
-  --radius: 16px;
+    /* Luxury Spacing & Borders */
+    --border-soft: 1px solid rgba(165, 133, 91, 0.15);
+    --shadow-elite: 0 20px 40px rgba(0, 0, 0, 0.03);
+    --transition-smooth: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+
+    /* Typography Tokens */
+    --font-heading: 'Playfair Display', serif;
+    --font-body: 'Montserrat', sans-serif;
 }
 
-/* ---------- Reset / base ---------- */
-*{ box-sizing:border-box; }
-html,body{
-  width:100%;
-  margin:0;
-  padding:0;
-  overflow-x:hidden;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-  color: var(--gray-900);
-  background: #bfe3f2; /* coincide con tu inline */
+/* 1. RESET & BASE */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-a{ color:inherit; text-decoration:none; }
-img, video, iframe{ max-width:100%; height:auto; }
-
-/* ---------- Utilidades ---------- */
-.muted{ color: var(--gray-500); }
-
-/* Contenedor general */
-.wrap{
-  width: min(1100px, 92vw);
-  margin: 0 auto;
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
-/* Secciones */
-.section{
-  padding: 64px 0;
-  background: transparent;
+body {
+    font-family: var(--font-body) !important;
+    background: var(--elite-white);
+    color: var(--elite-text);
+    line-height: 1.8;
+    letter-spacing: 0.02em;
 }
 
-/* Títulos */
-h1,h2,h3{
-  margin: 0 0 12px 0;
-  letter-spacing: -.02em;
-}
-h2{
-  text-align:center;
-  font-size: 34px;
-}
-.bar{
-  width: 90px;
-  height: 4px;
-  border-radius: 999px;
-  background: var(--primary);
-  margin: 14px auto 26px auto;
+.section {
+    padding: 100px 0;
+    /* More breathing space */
 }
 
-/* ---------- Barra superior de emergencia ---------- */
-.top{
-  width:100%;
-  background: #111827;
-  color: #fff;
-  padding: 10px 12px;
-  text-align:center;
-  font-weight: 800;
-  font-size: 13px;
+.section-title {
+    font-family: var(--font-heading);
+    color: var(--elite-navy);
+    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 20px;
 }
 
-/* ---------- Header / Nav ---------- */
-header{
-  width:100%;
-  position: sticky;
-  top: 0;
-  z-index: 50;
+.bar {
+    width: 40px;
+    height: 2px;
+    background: var(--elite-gold);
+    margin: 0 auto 40px;
 }
 
-.nav{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap: 18px;
-  padding: 14px 16px;
-  /* aunque en tu HTML pones transparente, esto ayuda cuando no hay inline */
-  background: rgba(255,255,255,.85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(229,231,235,.8);
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap: 12px;
-  min-width: 240px;
-}
-
-.brand img{
-  height: 52px;
-  width:auto;
-  display:block;
-}
-
-.brand-text{
-  display:flex;
-  flex-direction:column;
-  line-height:1.1;
-}
-
-.brand-title{
-  font-weight: 900;
-  font-size: 16px;
-  color: var(--primary-dark);
-  text-transform: uppercase;
-}
-
-.brand-subtitle{
-  font-size: 12px;
-  color: var(--gray-600);
-  letter-spacing: .06em;
-  text-transform: uppercase;
-}
-
-.nav-right{
-  display:flex;
-  align-items:center;
-  justify-content:flex-end;
-  gap: 14px;
-  flex: 1;
-}
-
-.navlinks{
-  display:flex;
-  align-items:center;
-  gap: 10px;
-  flex-wrap: wrap;
-  justify-content:flex-end;
-}
-
-.navlink{
-  padding: 10px 12px;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 14px;
-  color: var(--gray-700);
-  transition: transform .08s ease, background .15s ease;
-  white-space: nowrap;
-}
-
-.navlink:hover{
-  background: rgba(37,99,235,.10);
-  color: var(--primary-dark);
-}
-
-/* ---------- Botones ---------- */
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap: 8px;
-  padding: 12px 16px;
-  border-radius: 12px;
-  font-weight: 900;
-  border: 1px solid transparent;
-  cursor:pointer;
-  transition: transform .08s ease, filter .15s ease, background .15s ease;
-  user-select:none;
-}
-
-.btn:active{ transform: translateY(1px); }
-
-.btn-primary{
-  background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary) 100%);
-  color: #fff;
-  box-shadow: 0 8px 18px rgba(37,99,235,.18);
-}
-
-.btn-outline{
-  background: transparent;
-  color: var(--primary);
-  border-color: rgba(37,99,235,.35);
-}
-
-.btn-dark{
-  background: #111827;
-  color:#fff;
-}
-
-/* ---------- HERO (tu estilo Kansas Health, responsive) ---------- */
-.hero-background{
-  position: relative;
-  min-height: 650px;
-  height: 80vh;
-  max-height: 800px;
-
-  background-image: url('images/doctora-hero.png');
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
-
-  display:flex;
-  align-items:center;
-  overflow:hidden;
-}
-
-/* Overlay opcional si lo usas */
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background: linear-gradient(
-    135deg,
-    rgba(37, 99, 235, 0.85) 0%,
-    rgba(30, 64, 175, 0.75) 50%,
-    rgba(0, 0, 0, 0.30) 100%
-  );
-  z-index:1;
-}
-
-.hero-content-wrapper{
-  position: relative;
-  z-index: 2;
-  width:100%;
-  padding: 60px 20px;
-}
-
-.hero-text-content{
-  max-width: 700px;
-  text-align:left;
-}
-
-.hero-buttons{
-  display:flex;
-  gap: 14px;
-  flex-wrap: wrap;
-}
-
-.hero-btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap: 10px;
-  padding: 14px 18px;
-  border-radius: 14px;
-  font-weight: 900;
-  border: 1px solid transparent;
-  cursor:pointer;
-  transition: transform .08s ease, filter .15s ease;
-}
-
-.hero-btn:active{ transform: translateY(1px); }
-
-.hero-btn-primary{
-  background: rgba(255,255,255,.96);
-  color: var(--primary-dark);
-}
-
-.hero-btn-secondary{
-  background: rgba(17,24,39,.55);
-  color: #fff;
-  border-color: rgba(255,255,255,.35);
-}
-
-/* ---------- Cards / Grid ---------- */
-.grid{
-  display:grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.card{
-  background: #fff;
-  border: 1px solid rgba(229,231,235,.9);
-  border-radius: var(--radius);
-  padding: 22px;
-  box-shadow: var(--shadow);
-}
-
-.card h3{
-  margin-top: 8px;
-  margin-bottom: 8px;
-  font-size: 18px;
-}
-
-/* Testimonial look (tu inline agrega un gradiente; esto solo refuerza) */
-.testimonial{
-  border-left: 4px solid var(--accent);
-}
-
-/* ---------- Footer ---------- */
-footer{
-  background: rgba(255,255,255,.92);
-  border-top: 1px solid rgba(229,231,235,.9);
-  padding: 42px 0;
-}
-
-.social-icon{
-  width: 44px;
-  height: 44px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  border-radius: 999px;
-  border: 1px solid rgba(229,231,235,.9);
-  background: #fff;
-  color: var(--primary-dark);
-  transition: transform .08s ease, background .15s ease;
-}
-
-.social-icon:hover{
-  background: rgba(37,99,235,.08);
-}
-
-/* ---------- Floating buttons (WhatsApp/Phone) ---------- */
-.float{
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  display:flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 9999;
-}
-
-.fab{
-  width: 52px;
-  height: 52px;
-  border-radius: 999px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  font-size: 22px;
-  box-shadow: 0 16px 40px rgba(0,0,0,.18);
-  border: 1px solid rgba(255,255,255,.65);
-}
-
-.fab.wa{ background:#22c55e; color:#fff; }
-.fab.ph{ background: var(--primary); color:#fff; }
-
-/* ---------- Responsive (móvil/tablet) ---------- */
-@media (max-width: 980px){
-  .grid{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 768px){
-  /* Nav apilado */
-  .nav{
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px 12px;
-  }
-
-  .brand{
-    width:100%;
-    min-width: 0;
-  }
-
-  .brand img{ height: 44px; }
-
-  .nav-right{
-    width:100%;
-    justify-content:center;
-  }
-
-  .navlinks{
-    width:100%;
-    justify-content:center;
-  }
-
-  .navlink{
+/* 3. TOP BAR & HEADER */
+.top-bar {
+    background: var(--elite-navy);
+    color: white;
+    text-align: center;
+    padding: 5px 15px;
+    font-weight: 700;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
     font-size: 13px;
-    padding: 10px 10px;
-  }
-
-  /* HERO: evita “gigante” en celular */
-  .hero-background{
-    min-height: auto;
-    height: auto;
-    max-height: none;
-    background-position: center top;
-  }
-
-  .hero-content-wrapper{
-    padding: 28px 14px;
-  }
-
-  .hero-buttons{
-    flex-direction: column;
-    align-items: stretch;
-  }
-
-  .hero-btn{
-    width:100%;
-    text-align:center;
-  }
-
-  /* Grid a 1 columna */
-  .grid{
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  /* Secciones un poco más compactas */
-  .section{ padding: 46px 0; }
-
-  h2{ font-size: 26px; }
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 0.5px;
 }
 
-@media (max-width: 480px){
-  .wrap{ width: min(1100px, 94vw); }
-  .top{ font-size: 12px; padding: 9px 10px; }
-  .hero-content-wrapper{ padding: 22px 12px; }
+header {
+    position: fixed;
+    top: 28px;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(15px);
+    z-index: 1000;
+    height: 90px;
+    display: flex;
+    align-items: center;
+    border-bottom: var(--border-soft);
+}
+
+.nav-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-final {
+    height: 60px;
+    width: auto;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.brand-title {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--azul-oscuro);
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+}
+
+.brand-subtitle {
+    font-size: 0.65rem;
+    color: var(--azul-primary);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* NAVIGATION */
+.desktop-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.desktop-menu a {
+    font-family: var(--font-body);
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--elite-navy);
+    position: relative;
+    padding: 5px 0;
+}
+
+.desktop-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--elite-gold);
+    transition: var(--transition-smooth);
+}
+
+.desktop-menu a:hover::after,
+.desktop-menu a.active-link::after {
+    width: 100%;
+}
+
+.hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--azul-oscuro);
+    margin-left: auto;
+    /* Mantiene la hamburguesa a la derecha en móvil */
+}
+
+/* MOBILE MENU OVERLAY */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 108px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 108px);
+    background: white;
+    z-index: 999;
+    display: none;
+    flex-direction: column;
+    padding-top: 20px;
+}
+
+.mobile-menu-overlay.show-menu {
+    display: flex;
+}
+
+.mobile-menu-overlay a {
+    padding: 18px 30px;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--azul-oscuro);
+    border-bottom: 1px solid var(--gris-claro);
+}
+
+.mobile-menu-overlay a:hover,
+.mobile-menu-overlay a:active {
+    background-color: var(--azul-claro);
+    color: var(--azul-primary);
+    transform: translateX(10px);
+}
+
+/* 4. BUTTONS - Ferrari Standard (Refined) */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 200px;
+    width: auto;
+    min-height: 50px;
+    /* Regla SEO Google (48px+) */
+    background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+    color: white !important;
+    border-radius: var(--btn-radius);
+    font-weight: 700;
+    font-size: 18px;
+    /* Legibilidad mejorada */
+    border: none;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition);
+    white-space: nowrap;
+    text-align: center;
+    padding: 10px 25px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::after {
+    content: "";
+    background: rgba(255, 255, 255, 0.4);
+    width: 60px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -120px;
+    transform: skewX(-45deg);
+    transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(14, 165, 233, 0.4);
+}
+
+.btn-primary:hover::after {
+    left: 110%;
+}
+
+.btn-outline {
+    background: white !important;
+    color: var(--azul-navy) !important;
+    border: 2px solid var(--azul-navy) !important;
+}
+
+.btn-nav {
+    width: 140px;
+    height: 40px;
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+/* 5. HERO SECTION */
+.hero-background {
+    background-color: var(--azul-oscuro);
+    margin-top: 108px;
+    height: 75vh;
+    /* Reducido a 75vh para un diseño más equilibrado sin perder impacto */
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 60px;
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+.hero-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 85% top;
+    /* Empujada a la derecha en móvil para compensar el descentrado */
+    z-index: 0;
+}
+
+
+.pixel-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0.4;
+}
+
+.hero-content {
+    max-width: 580px;
+    /* Reducido para dar más aire a la doctora */
+    z-index: 10;
+    text-align: left;
+    padding: 0 20px;
+    margin-right: auto;
+    position: relative;
+}
+
+.hero-content h1 {
+    color: white;
+    font-size: clamp(24px, 5vw, 48px);
+    font-weight: 800;
+    text-transform: uppercase;
+    /* Sombras multi-capas para contraste premium y legibilidad máxima */
+    text-shadow:
+        0px 4px 10px rgba(0, 0, 0, 0.9),
+        0px 0px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    /* Cambiado de center para concordar con la nueva imagen */
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+/* 6. COMPONENTS: CARDS & GRIDS */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 20px;
+    border: 1px solid var(--borde);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--azul-primary);
+    box-shadow: var(--shadow-lg);
+}
+
+.card h3 {
+    font-size: 22px;
+    color: var(--azul-oscuro);
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.card p {
+    color: var(--gris-texto);
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+
+.testimonial-card {
+    font-style: italic;
+    background: var(--gris-claro);
+}
+
+.stars {
+    color: #f59e0b;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.author {
+    font-weight: 700;
+    color: var(--azul-oscuro);
+    margin-top: 15px;
+    font-style: normal;
+}
+
+/* 7. CONTACT & FOOTER */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.contact-map-container {
+    width: 100%;
+    height: 450px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+.contact-map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+footer {
+    background: var(--azul-oscuro);
+    color: #cbd5e1;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.social-circle {
+    background: white;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-circle svg {
+    width: 22px;
+    height: 22px;
+}
+
+.footer-links {
+    margin: 25px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.disclaimer-text {
+    font-size: 13px;
+    color: #94a3b8;
+    max-width: 900px;
+    margin: 0 auto 20px;
+    font-style: italic;
+}
+
+/* 8. MODAL */
+#modalCita {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    z-index: 99999;
+    align-items: center;
+    justify-content: center;
+}
+
+#modalCita.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 24px;
+    max-width: 500px;
+    width: 90%;
+    padding: 40px;
+    position: relative;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 32px;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: #94a3b8;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid var(--gris-claro);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.form-input:focus {
+    border-color: var(--azul-primary);
+    outline: none;
+}
+
+/* FLOAT BUTTONS - EXCLUSIVO MÓVIL (Mandato de Élite) */
+.float-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    /* Oculto en desktop */
+    flex-direction: column;
+    gap: 12px;
+    z-index: 2100;
+}
+
+.float-btn {
+    width: auto;
+    height: 60px;
+    padding: 0 15px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.float-btn::after {
+    content: "";
+    background: rgba(255, 255, 255, 0.4);
+    width: 40px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -80px;
+    transform: skewX(-45deg);
+    transition: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.float-btn:hover::after {
+    left: 120%;
+}
+
+.float-icon {
+    font-size: 24px;
+    position: relative;
+    z-index: 2;
+}
+
+.float-label {
+    position: relative;
+    z-index: 2;
+}
+
+.float-btn:hover {
+    transform: scale(1.05) translateY(-5px);
+}
+
+.float-ph {
+    background: var(--azul-primary);
+}
+
+.float-wa {
+    background: #25d366;
+}
+
+/* 9. RESPONSIVE REFINEMENTS */
+
+@media (max-width: 1024px) {
+    .desktop-menu {
+        display: none;
+    }
+
+    .hamburger-btn {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        top: 24px;
+        height: 70px;
+    }
+
+    .top-bar {
+        height: 24px;
+        font-size: 11px;
+    }
+
+    .hero-background {
+        height: 65vh;
+        margin-top: 94px;
+    }
+
+    .hero-img {
+        object-position: center top;
+        /* Anclado arriba para móvil para asegurar el rostro de la doctora */
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 24px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        /* Apila botones verticalmente */
+        gap: 15px;
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn-primary {
+        width: 100%;
+        /* Fácil para el pulgar en móvil */
+        max-width: 320px;
+        /* Evita que se vea exagerado en tablets pequeñas */
+        font-size: 20px;
+    }
+
+    .float-container {
+        display: flex;
+        /* Visible solo en móviles */
+    }
+
+    .float-label {
+        display: none;
+    }
+
+    .float-btn {
+        width: 55px;
+        height: 55px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 50%;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    }
+}
+
+/* 10. VIDEO ASSETS (Global Vision) */
+.video-container {
+    margin: 40px auto;
+    max-width: 600px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    background: black;
+    line-height: 0;
+}
+
+.mundo-animacion {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: brightness(0.9) contrast(1.1);
+}
+
+/* 11. PARALLAX EFFECTS (Desktop Only) */
+@media (min-width: 1024px) {
+    .hero-background {
+        background-color: #d8e2e3;
+        background-image: url('images/doctor-hero-final-branded.png');
+        background-attachment: fixed;
+        background-position: 98% 120px;
+        /* Subida para que no choque abajo y tenga aire arriba */
+        background-size: auto 75%;
+        /* Reducida para un efecto "enmarcado" premium */
+        background-repeat: no-repeat;
+        height: 80vh;
+        min-height: 600px;
+    }
+
+    .hero-content {
+        margin-left: 5%;
+        padding-top: 0px;
+        /* Elevado para acompañar el nuevo encuadre */
+    }
+
+    .hero-img {
+        display: none;
+    }
 }
