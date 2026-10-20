@@ -1,7 +1,6 @@
 name: Deploy to Hostinger
 
-# PRUEBA 20 oct 2026: sube solo _prueba_deploy/ a la carpeta real de clinicaha.com/pruebas.
-# Solo manual hasta validar la ruta.
+# Ruta corregida 20 oct 2026. Solo manual. NUNCA usar /public_html/ (apunta a clinicahablog.com).
 on:
   workflow_dispatch:
 
@@ -19,5 +18,8 @@ jobs:
           server: ${{ secrets.HOSTINGER_FTP_HOST }}
           username: ${{ secrets.HOSTINGER_FTP_USER }}
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-          local-dir: ./_prueba_deploy/
           server-dir: /domains/clinicaha.com/public_html/pruebas/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            _prueba_deploy/**
