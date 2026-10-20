@@ -1,7 +1,7 @@
 name: Deploy to Hostinger
 
-# PAUSADO 20 oct 2026: el destino FTP escribía en la raíz de la cuenta, no en public_html.
-# Solo se ejecuta manualmente hasta corregir server-dir.
+# PRUEBA 20 oct 2026: sube solo _prueba_deploy/ a la carpeta real de clinicaha.com/pruebas.
+# Solo manual hasta validar la ruta.
 on:
   workflow_dispatch:
 
@@ -19,4 +19,5 @@ jobs:
           server: ${{ secrets.HOSTINGER_FTP_HOST }}
           username: ${{ secrets.HOSTINGER_FTP_USER }}
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-          server-dir: /public_html/pruebas/
+          local-dir: ./_prueba_deploy/
+          server-dir: /domains/clinicaha.com/public_html/pruebas/
