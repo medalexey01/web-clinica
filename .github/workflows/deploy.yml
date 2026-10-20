@@ -1,9 +1,9 @@
 name: Deploy to Hostinger
 
+# PAUSADO 20 oct 2026: el destino FTP escribía en la raíz de la cuenta, no en public_html.
+# Solo se ejecuta manualmente hasta corregir server-dir.
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   deploy:
