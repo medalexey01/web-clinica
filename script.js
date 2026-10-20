@@ -166,7 +166,7 @@
         'No pudimos enviar su solicitud en este momento. Por favor llámenos al ' +
         '<a href="tel:+17132710622" style="font-weight:600; color:#8a1f1f; text-decoration:underline;">(713) 271-0622</a> ' +
         'o escríbanos por WhatsApp al ' +
-        '<a href="https://wa.me/13464827249?text=Hola,%20quiero%20informaci%C3%B3n%20de%20Cl%C3%ADnica%20Hispana%20Am%C3%A9rica" style="font-weight:600; color:#8a1f1f; text-decoration:underline;" target="_blank" rel="noopener">(346) 482-7249</a>.';
+        '<a href="https://wa.me/13468496882?text=Hola,%20quiero%20informaci%C3%B3n%20de%20Cl%C3%ADnica%20Hispana%20Am%C3%A9rica" style="font-weight:600; color:#8a1f1f; text-decoration:underline;" target="_blank" rel="noopener">(346) 849-6882</a>.';
       if (apptSubmitBtn) {
         apptForm.insertBefore(apptErrorMsg, apptSubmitBtn);
       } else {
